@@ -1,0 +1,1853 @@
+2022-04-27 05:04:50.007 CEST [20072] LOG:  starting PostgreSQL 15devel on x86_64-pc-linux-gnu, compiled by gcc (Gentoo 9.2.0-r2 p3) 9.2.0, 64-bit
+2022-04-27 05:04:50.008 CEST [20072] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-27 05:04:50.009 CEST [20072] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-27 05:04:50.010 CEST [20075] LOG:  database system was shut down at 2022-04-27 05:04:49 CEST
+2022-04-27 05:04:50.011 CEST [20072] LOG:  database system is ready to accept connections
+2022-04-27 05:04:50.061 CEST [20072] LOG:  received SIGHUP, reloading configuration files
+2022-04-27 05:04:50.062 CEST [20072] LOG:  parameter "temp_tablespaces" changed to "tmptbs"
+2022-04-27 05:04:50.064 CEST [20091] ERROR:  database "test" does not exist
+2022-04-27 05:04:50.064 CEST [20091] STATEMENT:  DROP DATABASE test;
+2022-04-27 05:04:50.067 CEST [20073] LOG:  checkpoint starting: immediate force wait flush-all
+2022-04-27 05:04:50.163 CEST [20073] LOG:  checkpoint complete: wrote 10 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.096 s, sync=0.001 s, total=0.097 s; sync files=9, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=2 kB
+2022-04-27 05:04:50.178 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 05:04:50.243 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.065 s, sync=0.001 s, total=0.066 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=2 kB
+2022-04-27 05:19:50.443 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 05:33:20.210 CEST [20073] LOG:  checkpoint complete: wrote 8439 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1293 recycled; write=809.602 s, sync=0.001 s, total=809.768 s; sync files=62, longest=0.001 s, average=0.001 s; distance=1324664 kB, estimate=1324664 kB
+2022-04-27 05:53:17.869 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 05:53:17.930 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.061 s, sync=0.001 s, total=0.062 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=1192198 kB
+2022-04-27 05:53:21.699 CEST [4240] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 6724 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 255505 remain, 0 are dead but not yet removable, oldest xmin: 248074
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.013 MB/s, avg write rate: 0.026 MB/s
+	buffer usage: 13485 hits, 1 misses, 2 dirtied
+	WAL usage: 6495 records, 2 full page images, 386672 bytes
+	system usage: CPU: user: 0.08 s, system: 0.00 s, elapsed: 0.15 s
+2022-04-27 05:53:22.367 CEST [4240] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.055 MB/s, avg write rate: 0.076 MB/s
+	buffer usage: 7814 hits, 19 misses, 26 dirtied
+	system usage: CPU: user: 0.61 s, system: 0.02 s, elapsed: 0.66 s
+2022-04-27 05:54:40.847 CEST [4596] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 714546 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 411560 removed, 10267566 remain, 269104 are dead but not yet removable, oldest xmin: 5253572
+	index scan needed: 714131 pages from table (99.94% of total) had 718459 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.001 MB/s, avg write rate: 0.068 MB/s
+	buffer usage: 2258434 hits, 6 misses, 674 dirtied
+	WAL usage: 1363010 records, 89 full page images, 74452833 bytes
+	system usage: CPU: user: 8.41 s, system: 1.27 s, elapsed: 19.25 s
+2022-04-27 05:54:44.646 CEST [4596] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.005 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 300500 hits, 9 misses, 17 dirtied
+	system usage: CPU: user: 2.28 s, system: 0.24 s, elapsed: 3.79 s
+2022-04-27 05:54:49.698 CEST [4596] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 189607 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 7198127 remain, 0 are dead but not yet removable, oldest xmin: 7201476
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 366477 hits, 23 misses, 23 dirtied
+	WAL usage: 182988 records, 23 full page images, 10843640 bytes
+	system usage: CPU: user: 2.85 s, system: 0.26 s, elapsed: 5.03 s
+2022-04-27 05:54:52.798 CEST [4596] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.007 MB/s, avg write rate: 0.007 MB/s
+	buffer usage: 201095 hits, 11 misses, 11 dirtied
+	system usage: CPU: user: 2.22 s, system: 0.03 s, elapsed: 3.09 s
+2022-04-27 05:55:37.775 CEST [4956] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 724921 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 378377 removed, 10320636 remain, 336504 are dead but not yet removable, oldest xmin: 10305563
+	index scan needed: 201582 pages from table (27.81% of total) had 221632 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1766660 hits, 1 misses, 1 dirtied
+	WAL usage: 992136 records, 1 full page images, 56387059 bytes
+	system usage: CPU: user: 7.28 s, system: 1.36 s, elapsed: 16.16 s
+2022-04-27 05:55:41.142 CEST [4956] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.005 MB/s, avg write rate: 0.005 MB/s
+	buffer usage: 300506 hits, 8 misses, 8 dirtied
+	system usage: CPU: user: 1.99 s, system: 0.12 s, elapsed: 3.36 s
+2022-04-27 05:55:44.338 CEST [4956] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 314414 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 11947361 remain, 0 are dead but not yet removable, oldest xmin: 11945834
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 250317 hits, 15 misses, 15 dirtied
+	WAL usage: 124860 records, 15 full page images, 7397664 bytes
+	system usage: CPU: user: 1.81 s, system: 0.14 s, elapsed: 3.18 s
+2022-04-27 05:55:48.189 CEST [4956] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.006 MB/s, avg write rate: 0.006 MB/s
+	buffer usage: 300482 hits, 11 misses, 11 dirtied
+	system usage: CPU: user: 2.55 s, system: 0.05 s, elapsed: 3.85 s
+2022-04-27 05:56:39.805 CEST [5310] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 741091 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 399415 removed, 10290193 remain, 319447 are dead but not yet removable, oldest xmin: 15341325
+	index scan needed: 396937 pages from table (53.56% of total) had 456822 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1994382 hits, 2 misses, 2 dirtied
+	WAL usage: 1167926 records, 2 full page images, 65499217 bytes
+	system usage: CPU: user: 8.24 s, system: 1.44 s, elapsed: 18.16 s
+2022-04-27 05:56:43.540 CEST [5310] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300521 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.29 s, system: 0.18 s, elapsed: 3.73 s
+2022-04-27 05:56:47.186 CEST [5310] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 452001 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 17175803 remain, 0 are dead but not yet removable, oldest xmin: 17168391
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 275969 hits, 17 misses, 17 dirtied
+	WAL usage: 137447 records, 17 full page images, 8144403 bytes
+	system usage: CPU: user: 2.07 s, system: 0.16 s, elapsed: 3.63 s
+2022-04-27 05:56:50.937 CEST [5310] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.001 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300515 hits, 1 misses, 1 dirtied
+	system usage: CPU: user: 2.44 s, system: 0.06 s, elapsed: 3.75 s
+2022-04-27 05:57:40.425 CEST [5670] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 758588 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 404672 removed, 10315195 remain, 335598 are dead but not yet removable, oldest xmin: 20357212
+	index scan needed: 395588 pages from table (52.15% of total) had 463848 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 2028054 hits, 2 misses, 2 dirtied
+	WAL usage: 1173552 records, 2 full page images, 65963896 bytes
+	system usage: CPU: user: 8.60 s, system: 1.52 s, elapsed: 18.76 s
+2022-04-27 05:57:44.156 CEST [5670] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.004 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300528 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.23 s, system: 0.23 s, elapsed: 3.73 s
+2022-04-27 05:57:47.766 CEST [5670] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 585296 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 22240969 remain, 0 are dead but not yet removable, oldest xmin: 22238718
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 267930 hits, 17 misses, 17 dirtied
+	WAL usage: 133440 records, 17 full page images, 7907990 bytes
+	system usage: CPU: user: 2.03 s, system: 0.19 s, elapsed: 3.59 s
+2022-04-27 05:57:51.657 CEST [5670] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.006 MB/s, avg write rate: 0.006 MB/s
+	buffer usage: 300522 hits, 11 misses, 11 dirtied
+	system usage: CPU: user: 2.56 s, system: 0.08 s, elapsed: 3.89 s
+2022-04-27 05:58:39.998 CEST [6024] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 766993 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 403202 removed, 10338501 remain, 352254 are dead but not yet removable, oldest xmin: 25383432
+	index scan needed: 304587 pages from table (39.71% of total) had 358708 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1953878 hits, 1 misses, 1 dirtied
+	WAL usage: 1108510 records, 1 full page images, 62798831 bytes
+	system usage: CPU: user: 8.41 s, system: 1.55 s, elapsed: 18.29 s
+2022-04-27 05:58:43.587 CEST [6024] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300531 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.14 s, system: 0.19 s, elapsed: 3.58 s
+2022-04-27 05:58:47.108 CEST [6024] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 716388 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 27221879 remain, 0 are dead but not yet removable, oldest xmin: 27221676
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 263397 hits, 16 misses, 16 dirtied
+	WAL usage: 131137 records, 16 full page images, 7770060 bytes
+	system usage: CPU: user: 1.97 s, system: 0.20 s, elapsed: 3.50 s
+2022-04-27 05:58:50.870 CEST [6024] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300549 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.43 s, system: 0.08 s, elapsed: 3.76 s
+2022-04-27 05:59:39.635 CEST [6385] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 769881 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 403235 removed, 10343558 remain, 357147 are dead but not yet removable, oldest xmin: 30425044
+	index scan needed: 243996 pages from table (31.69% of total) had 286525 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1899073 hits, 1 misses, 1 dirtied
+	WAL usage: 1064613 records, 1 full page images, 60667790 bytes
+	system usage: CPU: user: 8.23 s, system: 1.57 s, elapsed: 17.91 s
+2022-04-27 05:59:43.311 CEST [6385] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.004 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300530 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.24 s, system: 0.17 s, elapsed: 3.67 s
+2022-04-27 06:00:38.917 CEST [6740] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 771565 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 398831 removed, 10364041 remain, 363002 are dead but not yet removable, oldest xmin: 35491852
+	index scan needed: 149530 pages from table (19.38% of total) had 169210 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1807977 hits, 0 misses, 0 dirtied
+	WAL usage: 970579 records, 0 full page images, 55892821 bytes
+	system usage: CPU: user: 7.83 s, system: 1.59 s, elapsed: 17.15 s
+2022-04-27 06:00:42.460 CEST [6740] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.001 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300538 hits, 1 misses, 1 dirtied
+	system usage: CPU: user: 2.15 s, system: 0.13 s, elapsed: 3.54 s
+2022-04-27 06:00:49.568 CEST [6740] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 979634 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 37225984 remain, 0 are dead but not yet removable, oldest xmin: 37226312
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 527981 hits, 33 misses, 33 dirtied
+	WAL usage: 263300 records, 33 full page images, 15602578 bytes
+	system usage: CPU: user: 4.08 s, system: 0.32 s, elapsed: 7.09 s
+2022-04-27 06:00:53.536 CEST [6740] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.005 MB/s, avg write rate: 0.005 MB/s
+	buffer usage: 300585 hits, 11 misses, 11 dirtied
+	system usage: CPU: user: 2.62 s, system: 0.09 s, elapsed: 3.96 s
+2022-04-27 06:01:39.833 CEST [7105] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 774736 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 404863 removed, 10361241 remain, 366383 are dead but not yet removable, oldest xmin: 40526933
+	index scan needed: 221281 pages from table (28.56% of total) had 256816 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1886073 hits, 0 misses, 0 dirtied
+	WAL usage: 1048630 records, 0 full page images, 59934661 bytes
+	system usage: CPU: user: 8.34 s, system: 1.64 s, elapsed: 18.05 s
+2022-04-27 06:01:43.534 CEST [7105] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.004 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300506 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.30 s, system: 0.15 s, elapsed: 3.70 s
+2022-04-27 06:02:38.911 CEST [7479] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 775345 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 398464 removed, 10374545 remain, 374396 are dead but not yet removable, oldest xmin: 45595515
+	index scan needed: 113071 pages from table (14.58% of total) had 126079 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1779082 hits, 0 misses, 0 dirtied
+	WAL usage: 925765 records, 0 full page images, 53625542 bytes
+	system usage: CPU: user: 7.90 s, system: 1.58 s, elapsed: 17.09 s
+2022-04-27 06:02:42.442 CEST [7479] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300532 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.15 s, system: 0.12 s, elapsed: 3.53 s
+2022-04-27 06:02:49.628 CEST [7479] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1245678 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 47335383 remain, 0 are dead but not yet removable, oldest xmin: 47330766
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 533857 hits, 32 misses, 32 dirtied
+	WAL usage: 265909 records, 32 full page images, 15754456 bytes
+	system usage: CPU: user: 4.08 s, system: 0.37 s, elapsed: 7.17 s
+2022-04-27 06:02:53.662 CEST [7479] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300618 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.66 s, system: 0.11 s, elapsed: 4.03 s
+2022-04-27 06:03:39.845 CEST [7845] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 775345 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 401271 removed, 10364556 remain, 369004 are dead but not yet removable, oldest xmin: 50633532
+	index scan needed: 210218 pages from table (27.11% of total) had 240291 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1876227 hits, 0 misses, 0 dirtied
+	WAL usage: 1035362 records, 0 full page images, 59252567 bytes
+	system usage: CPU: user: 8.35 s, system: 1.63 s, elapsed: 18.01 s
+2022-04-27 06:03:43.527 CEST [7845] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300517 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.26 s, system: 0.16 s, elapsed: 3.68 s
+2022-04-27 06:04:39.222 CEST [8199] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 775882 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 395257 removed, 10379298 remain, 379151 are dead but not yet removable, oldest xmin: 55714316
+	index scan needed: 109231 pages from table (14.08% of total) had 121533 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114015 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1776316 hits, 0 misses, 0 dirtied
+	WAL usage: 941047 records, 0 full page images, 54705010 bytes
+	system usage: CPU: user: 7.96 s, system: 1.76 s, elapsed: 17.34 s
+2022-04-27 06:04:42.905 CEST [8199] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300535 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.29 s, system: 0.14 s, elapsed: 3.68 s
+2022-04-27 06:04:47.435 CEST [8199] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300617 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.93 s, system: 0.25 s, elapsed: 4.51 s
+2022-04-27 06:05:40.521 CEST [8554] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777615 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 400316 removed, 10373477 remain, 376128 are dead but not yet removable, oldest xmin: 60774438
+	index scan needed: 231065 pages from table (29.71% of total) had 261255 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1901623 hits, 1 misses, 1 dirtied
+	WAL usage: 1069465 records, 1 full page images, 61218221 bytes
+	system usage: CPU: user: 8.66 s, system: 1.78 s, elapsed: 18.62 s
+2022-04-27 06:05:44.130 CEST [8554] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300516 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.16 s, system: 0.18 s, elapsed: 3.60 s
+2022-04-27 06:05:54.777 CEST [8554] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1648545 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 62644184 remain, 0 are dead but not yet removable, oldest xmin: 62640724
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 808315 hits, 50 misses, 50 dirtied
+	WAL usage: 402920 records, 50 full page images, 23875059 bytes
+	system usage: CPU: user: 5.95 s, system: 0.51 s, elapsed: 10.63 s
+2022-04-27 06:06:39.226 CEST [8915] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 395903 removed, 10384090 remain, 383938 are dead but not yet removable, oldest xmin: 65825681
+	index scan needed: 89707 pages from table (11.53% of total) had 98577 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1760892 hits, 0 misses, 0 dirtied
+	WAL usage: 915842 records, 0 full page images, 53426060 bytes
+	system usage: CPU: user: 8.05 s, system: 1.69 s, elapsed: 17.30 s
+2022-04-27 06:06:42.747 CEST [8915] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300533 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.12 s, system: 0.14 s, elapsed: 3.52 s
+2022-04-27 06:06:47.066 CEST [8915] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300665 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.79 s, system: 0.24 s, elapsed: 4.30 s
+2022-04-27 06:07:40.498 CEST [9273] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 398567 removed, 10376497 remain, 375656 are dead but not yet removable, oldest xmin: 70888744
+	index scan needed: 209182 pages from table (26.89% of total) had 235406 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1880369 hits, 0 misses, 0 dirtied
+	WAL usage: 1045346 records, 0 full page images, 59954913 bytes
+	system usage: CPU: user: 8.67 s, system: 1.79 s, elapsed: 18.54 s
+2022-04-27 06:07:44.093 CEST [9273] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300518 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.20 s, system: 0.13 s, elapsed: 3.59 s
+2022-04-27 06:08:17.864 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 06:08:43.728 CEST [9633] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 307802 removed, 10471702 remain, 471545 are dead but not yet removable, oldest xmin: 75899184
+	index scan needed: 98736 pages from table (12.69% of total) had 108463 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 4.930 MB/s
+	buffer usage: 1769925 hits, 0 misses, 54911 dirtied
+	WAL usage: 763167 records, 269519 full page images, 527080725 bytes
+	system usage: CPU: user: 8.06 s, system: 1.69 s, elapsed: 21.75 s
+2022-04-27 06:08:47.685 CEST [9633] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.072 MB/s
+	buffer usage: 300536 hits, 0 misses, 4198 dirtied
+	system usage: CPU: user: 2.23 s, system: 0.13 s, elapsed: 3.95 s
+2022-04-27 06:08:58.629 CEST [9633] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 2049571 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 77883050 remain, 0 are dead but not yet removable, oldest xmin: 77882887
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 805118 hits, 50 misses, 50 dirtied
+	WAL usage: 401129 records, 55 full page images, 23779655 bytes
+	system usage: CPU: user: 6.10 s, system: 0.62 s, elapsed: 10.92 s
+2022-04-27 06:09:02.685 CEST [9633] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.010 MB/s
+	buffer usage: 300715 hits, 0 misses, 20 dirtied
+	system usage: CPU: user: 2.63 s, system: 0.17 s, elapsed: 4.05 s
+2022-04-27 06:09:44.214 CEST [9987] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 334787 removed, 10442083 remain, 440880 are dead but not yet removable, oldest xmin: 80751056
+	index scan needed: 196140 pages from table (25.21% of total) had 221898 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 4.274 MB/s
+	buffer usage: 1867326 hits, 0 misses, 48607 dirtied
+	WAL usage: 912084 records, 0 full page images, 52143380 bytes
+	system usage: CPU: user: 8.50 s, system: 1.78 s, elapsed: 22.21 s
+2022-04-27 06:09:48.503 CEST [9987] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.462 MB/s
+	buffer usage: 300517 hits, 0 misses, 5406 dirtied
+	system usage: CPU: user: 2.34 s, system: 0.24 s, elapsed: 4.28 s
+2022-04-27 06:10:43.246 CEST [10347] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 364780 removed, 10413923 remain, 413240 are dead but not yet removable, oldest xmin: 85821431
+	index scan needed: 126878 pages from table (16.31% of total) had 140784 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.876 MB/s
+	buffer usage: 1798065 hits, 0 misses, 42120 dirtied
+	WAL usage: 897136 records, 0 full page images, 51894789 bytes
+	system usage: CPU: user: 8.31 s, system: 1.80 s, elapsed: 21.22 s
+2022-04-27 06:10:47.426 CEST [10347] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 1.941 MB/s
+	buffer usage: 300533 hits, 0 misses, 4155 dirtied
+	system usage: CPU: user: 2.37 s, system: 0.21 s, elapsed: 4.17 s
+2022-04-27 06:11:43.418 CEST [10701] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 777929 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 387650 removed, 10390950 remain, 390323 are dead but not yet removable, oldest xmin: 90891798
+	index scan needed: 130759 pages from table (16.81% of total) had 144378 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.921 MB/s
+	buffer usage: 1801948 hits, 0 misses, 42869 dirtied
+	WAL usage: 944141 records, 0 full page images, 54657264 bytes
+	system usage: CPU: user: 8.41 s, system: 1.75 s, elapsed: 21.35 s
+2022-04-27 06:11:47.441 CEST [10701] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 1.263 MB/s
+	buffer usage: 300518 hits, 0 misses, 2602 dirtied
+	system usage: CPU: user: 2.29 s, system: 0.26 s, elapsed: 4.02 s
+2022-04-27 06:11:52.292 CEST [10701] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300720 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 3.16 s, system: 0.33 s, elapsed: 4.83 s
+2022-04-27 06:12:41.075 CEST [11062] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779010 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 401504 removed, 10374877 remain, 378769 are dead but not yet removable, oldest xmin: 95945036
+	index scan needed: 232865 pages from table (29.89% of total) had 262523 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.097 MB/s
+	buffer usage: 1906215 hits, 0 misses, 943 dirtied
+	WAL usage: 1072999 records, 0 full page images, 61419846 bytes
+	system usage: CPU: user: 8.97 s, system: 1.75 s, elapsed: 18.99 s
+2022-04-27 06:12:44.705 CEST [11062] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300533 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.20 s, system: 0.16 s, elapsed: 3.63 s
+2022-04-27 06:13:39.592 CEST [11418] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 398954 removed, 10384291 remain, 384163 are dead but not yet removable, oldest xmin: 101024476
+	index scan needed: 89707 pages from table (11.51% of total) had 98510 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1763847 hits, 0 misses, 0 dirtied
+	WAL usage: 920641 records, 0 full page images, 53712935 bytes
+	system usage: CPU: user: 8.20 s, system: 1.69 s, elapsed: 17.47 s
+2022-04-27 06:13:43.162 CEST [11418] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300525 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.17 s, system: 0.14 s, elapsed: 3.57 s
+2022-04-27 06:14:01.469 CEST [11418] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 2704954 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 102787256 remain, 0 are dead but not yet removable, oldest xmin: 102788307
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.009 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 1314597 hits, 81 misses, 81 dirtied
+	WAL usage: 655427 records, 81 full page images, 38836615 bytes
+	system usage: CPU: user: 10.11 s, system: 1.06 s, elapsed: 18.29 s
+2022-04-27 06:14:05.681 CEST [11418] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300812 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.72 s, system: 0.23 s, elapsed: 4.21 s
+2022-04-27 06:14:40.609 CEST [11778] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 401076 removed, 10379123 remain, 377888 are dead but not yet removable, oldest xmin: 106036447
+	index scan needed: 180979 pages from table (23.22% of total) had 206704 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1855121 hits, 0 misses, 0 dirtied
+	WAL usage: 1013325 records, 0 full page images, 58328502 bytes
+	system usage: CPU: user: 8.69 s, system: 1.81 s, elapsed: 18.48 s
+2022-04-27 06:14:44.322 CEST [11778] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300523 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.27 s, system: 0.18 s, elapsed: 3.71 s
+2022-04-27 06:15:39.905 CEST [12132] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 398352 removed, 10383158 remain, 382884 are dead but not yet removable, oldest xmin: 111117300
+	index scan needed: 112074 pages from table (14.38% of total) had 123591 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1786218 hits, 0 misses, 0 dirtied
+	WAL usage: 947279 records, 0 full page images, 55042966 bytes
+	system usage: CPU: user: 8.31 s, system: 1.76 s, elapsed: 17.74 s
+2022-04-27 06:15:43.589 CEST [12132] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.30 s, system: 0.12 s, elapsed: 3.68 s
+2022-04-27 06:16:40.074 CEST [12493] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 397974 removed, 10383563 remain, 383114 are dead but not yet removable, oldest xmin: 116198544
+	index scan needed: 118207 pages from table (15.17% of total) had 129597 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1792348 hits, 0 misses, 0 dirtied
+	WAL usage: 952955 records, 0 full page images, 55316290 bytes
+	system usage: CPU: user: 8.41 s, system: 1.77 s, elapsed: 17.89 s
+2022-04-27 06:16:43.565 CEST [12493] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300518 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.09 s, system: 0.14 s, elapsed: 3.49 s
+2022-04-27 06:16:48.287 CEST [12493] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300812 hits, 0 misses, 1 dirtied
+	system usage: CPU: user: 3.02 s, system: 0.38 s, elapsed: 4.70 s
+2022-04-27 06:17:41.138 CEST [12847] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 401741 removed, 10376398 remain, 375729 are dead but not yet removable, oldest xmin: 121260449
+	index scan needed: 227044 pages from table (29.13% of total) had 253121 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1901187 hits, 0 misses, 0 dirtied
+	WAL usage: 1067641 records, 0 full page images, 61139205 bytes
+	system usage: CPU: user: 9.05 s, system: 1.69 s, elapsed: 18.91 s
+2022-04-27 06:17:44.788 CEST [12847] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.21 s, system: 0.17 s, elapsed: 3.64 s
+2022-04-27 06:18:46.034 CEST [13207] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 6 skipped due to pins, 0 skipped frozen
+	tuples: 282516 removed, 10500567 remain, 500265 are dead but not yet removable, oldest xmin: 126305128
+	index scan needed: 98411 pages from table (12.63% of total) had 108199 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 5.363 MB/s, avg write rate: 5.370 MB/s
+	buffer usage: 1707225 hits, 65325 misses, 65407 dirtied
+	WAL usage: 707456 records, 0 full page images, 40918358 bytes
+	system usage: CPU: user: 8.47 s, system: 2.22 s, elapsed: 23.79 s
+2022-04-27 06:18:49.894 CEST [13207] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 2.110 MB/s, avg write rate: 0.012 MB/s
+	buffer usage: 296362 hits, 4170 misses, 23 dirtied
+	system usage: CPU: user: 2.37 s, system: 0.21 s, elapsed: 3.85 s
+2022-04-27 06:19:40.206 CEST [13561] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 390677 removed, 10391702 remain, 391202 are dead but not yet removable, oldest xmin: 131375730
+	index scan needed: 105685 pages from table (13.56% of total) had 115286 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.003 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1779799 hits, 29 misses, 2 dirtied
+	WAL usage: 928544 records, 0 full page images, 53991676 bytes
+	system usage: CPU: user: 8.53 s, system: 1.74 s, elapsed: 17.92 s
+2022-04-27 06:19:43.703 CEST [13561] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.001 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300517 hits, 1 misses, 8 dirtied
+	system usage: CPU: user: 2.08 s, system: 0.16 s, elapsed: 3.49 s
+2022-04-27 06:20:06.615 CEST [13561] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 3504845 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 133183264 remain, 0 are dead but not yet removable, oldest xmin: 133176022
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.034 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 1604367 hits, 394 misses, 108 dirtied
+	WAL usage: 799786 records, 98 full page images, 47403817 bytes
+	system usage: CPU: user: 12.63 s, system: 1.38 s, elapsed: 22.89 s
+2022-04-27 06:20:10.970 CEST [13561] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 9.784 MB/s, avg write rate: 0.011 MB/s
+	buffer usage: 279098 hits, 21817 misses, 25 dirtied
+	system usage: CPU: user: 2.71 s, system: 0.29 s, elapsed: 4.35 s
+2022-04-27 06:20:41.032 CEST [13917] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 397722 removed, 10385475 remain, 383842 are dead but not yet removable, oldest xmin: 136379186
+	index scan needed: 181853 pages from table (23.33% of total) had 208775 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1855993 hits, 0 misses, 0 dirtied
+	WAL usage: 1005764 records, 0 full page images, 57878117 bytes
+	system usage: CPU: user: 8.99 s, system: 1.78 s, elapsed: 18.76 s
+2022-04-27 06:20:44.689 CEST [13917] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300538 hits, 0 misses, 1 dirtied
+	system usage: CPU: user: 2.24 s, system: 0.15 s, elapsed: 3.65 s
+2022-04-27 06:21:44.490 CEST [14276] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 393834 removed, 10388064 remain, 387737 are dead but not yet removable, oldest xmin: 141465472
+	index scan needed: 111603 pages from table (14.32% of total) had 122610 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 4.535 MB/s
+	buffer usage: 1785745 hits, 0 misses, 51500 dirtied
+	WAL usage: 932955 records, 0 full page images, 54190079 bytes
+	system usage: CPU: user: 8.54 s, system: 1.82 s, elapsed: 22.17 s
+2022-04-27 06:21:48.471 CEST [14276] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300525 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.41 s, system: 0.29 s, elapsed: 3.98 s
+2022-04-27 06:21:51.502 CEST [20073] LOG:  checkpoint complete: wrote 2825636 buffers (67.4%); 0 WAL file(s) added, 0 removed, 21481 recycled; write=809.139 s, sync=0.036 s, total=813.638 s; sync files=573, longest=0.030 s, average=0.001 s; distance=21995903 kB, estimate=21995903 kB
+2022-04-27 06:22:40.605 CEST [14632] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 380669 removed, 10401471 remain, 401006 are dead but not yet removable, oldest xmin: 146621573
+	index scan needed: 114789 pages from table (14.73% of total) had 125753 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.040 MB/s
+	buffer usage: 1788931 hits, 0 misses, 374 dirtied
+	WAL usage: 919396 records, 0 full page images, 53349905 bytes
+	system usage: CPU: user: 8.73 s, system: 1.79 s, elapsed: 18.25 s
+2022-04-27 06:22:44.301 CEST [14632] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300518 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.26 s, system: 0.17 s, elapsed: 3.69 s
+2022-04-27 06:23:17.605 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 06:23:42.244 CEST [15005] LOG:  automatic aggressive vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 780032 removed, 10000000 remain, 0 are dead but not yet removable, oldest xmin: 151481484
+	index scan needed: 115508 pages from table (14.82% of total) had 127465 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 4.225 MB/s
+	buffer usage: 1789653 hits, 0 misses, 42964 dirtied
+	WAL usage: 1760793 records, 817902 full page images, 1558094889 bytes
+	system usage: CPU: user: 6.33 s, system: 1.79 s, elapsed: 19.86 s
+2022-04-27 06:23:45.117 CEST [15005] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.015 MB/s
+	buffer usage: 300526 hits, 0 misses, 22 dirtied
+	system usage: CPU: user: 1.53 s, system: 0.08 s, elapsed: 2.87 s
+2022-04-27 06:23:48.999 CEST [15005] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 26.337 MB/s, avg write rate: 0.014 MB/s
+	buffer usage: 248765 hits, 52145 misses, 27 dirtied
+	system usage: CPU: user: 2.00 s, system: 0.39 s, elapsed: 3.86 s
+2022-04-27 06:25:42.558 CEST [15457] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 350019 removed, 10436996 remain, 437042 are dead but not yet removable, oldest xmin: 157093657
+	index scan needed: 19411 pages from table (2.49% of total) had 19820 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.841 MB/s
+	buffer usage: 1693526 hits, 0 misses, 39587 dirtied
+	WAL usage: 741714 records, 0 full page images, 43982341 bytes
+	system usage: CPU: user: 7.85 s, system: 1.79 s, elapsed: 20.12 s
+2022-04-27 06:25:46.585 CEST [15457] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 1.687 MB/s
+	buffer usage: 300526 hits, 0 misses, 3478 dirtied
+	system usage: CPU: user: 2.26 s, system: 0.22 s, elapsed: 4.02 s
+2022-04-27 06:26:44.119 CEST [15811] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 373075 removed, 10409101 remain, 408692 are dead but not yet removable, oldest xmin: 162315686
+	index scan needed: 131189 pages from table (16.83% of total) had 142280 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.567 MB/s
+	buffer usage: 1805330 hits, 0 misses, 39539 dirtied
+	WAL usage: 921090 records, 0 full page images, 53279164 bytes
+	system usage: CPU: user: 8.80 s, system: 1.90 s, elapsed: 21.64 s
+2022-04-27 06:26:48.371 CEST [15811] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.003 MB/s, avg write rate: 1.344 MB/s
+	buffer usage: 300539 hits, 7 misses, 2925 dirtied
+	system usage: CPU: user: 2.47 s, system: 0.27 s, elapsed: 4.25 s
+2022-04-27 06:27:41.089 CEST [16171] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 380733 removed, 10401847 remain, 401326 are dead but not yet removable, oldest xmin: 167543510
+	index scan needed: 133222 pages from table (17.09% of total) had 147941 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.149 MB/s
+	buffer usage: 1807367 hits, 0 misses, 1416 dirtied
+	WAL usage: 942129 records, 0 full page images, 54512248 bytes
+	system usage: CPU: user: 8.88 s, system: 1.82 s, elapsed: 18.60 s
+2022-04-27 06:27:44.701 CEST [16171] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.004 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300514 hits, 7 misses, 8 dirtied
+	system usage: CPU: user: 2.17 s, system: 0.17 s, elapsed: 3.61 s
+2022-04-27 06:28:48.353 CEST [16525] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 304764 removed, 10478804 remain, 478326 are dead but not yet removable, oldest xmin: 172705082
+	index scan needed: 107261 pages from table (13.76% of total) had 118382 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1781403 hits, 0 misses, 0 dirtied
+	WAL usage: 761074 records, 0 full page images, 44008208 bytes
+	system usage: CPU: user: 8.80 s, system: 1.97 s, elapsed: 25.82 s
+2022-04-27 06:28:53.690 CEST [16525] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.003 MB/s, avg write rate: 0.003 MB/s
+	buffer usage: 300509 hits, 8 misses, 8 dirtied
+	system usage: CPU: user: 2.47 s, system: 0.34 s, elapsed: 5.33 s
+2022-04-27 06:29:49.268 CEST [16885] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 308604 removed, 10474571 remain, 473864 are dead but not yet removable, oldest xmin: 177838557
+	index scan needed: 170221 pages from table (21.84% of total) had 188771 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1844363 hits, 0 misses, 0 dirtied
+	WAL usage: 840970 records, 0 full page images, 48140575 bytes
+	system usage: CPU: user: 9.10 s, system: 2.04 s, elapsed: 26.72 s
+2022-04-27 06:29:54.742 CEST [16885] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.53 s, system: 0.40 s, elapsed: 5.47 s
+2022-04-27 06:30:49.427 CEST [17240] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 308807 removed, 10475349 remain, 474191 are dead but not yet removable, oldest xmin: 182958726
+	index scan needed: 174737 pages from table (22.42% of total) had 198407 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1848877 hits, 0 misses, 0 dirtied
+	WAL usage: 839152 records, 0 full page images, 48003158 bytes
+	system usage: CPU: user: 9.22 s, system: 2.00 s, elapsed: 26.84 s
+2022-04-27 06:30:54.857 CEST [17240] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300524 hits, 1 misses, 2 dirtied
+	system usage: CPU: user: 2.52 s, system: 0.37 s, elapsed: 5.42 s
+2022-04-27 06:31:49.248 CEST [17600] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 316384 removed, 10468085 remain, 466803 are dead but not yet removable, oldest xmin: 188093218
+	index scan needed: 163357 pages from table (20.96% of total) had 185574 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1837500 hits, 0 misses, 0 dirtied
+	WAL usage: 840499 records, 0 full page images, 48184700 bytes
+	system usage: CPU: user: 9.18 s, system: 1.94 s, elapsed: 26.64 s
+2022-04-27 06:31:54.748 CEST [17600] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.57 s, system: 0.39 s, elapsed: 5.49 s
+2022-04-27 06:32:49.570 CEST [17954] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 314474 removed, 10469792 remain, 468450 are dead but not yet removable, oldest xmin: 193220048
+	index scan needed: 177410 pages from table (22.76% of total) had 202056 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1851553 hits, 0 misses, 0 dirtied
+	WAL usage: 851894 records, 0 full page images, 48737883 bytes
+	system usage: CPU: user: 9.26 s, system: 2.02 s, elapsed: 26.93 s
+2022-04-27 06:32:55.159 CEST [17954] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.002 MB/s, avg write rate: 0.002 MB/s
+	buffer usage: 300539 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.62 s, system: 0.42 s, elapsed: 5.58 s
+2022-04-27 06:33:49.671 CEST [18308] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 311247 removed, 10473468 remain, 471922 are dead but not yet removable, oldest xmin: 198344021
+	index scan needed: 178259 pages from table (22.87% of total) had 204285 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1852403 hits, 0 misses, 0 dirtied
+	WAL usage: 845532 records, 0 full page images, 48354034 bytes
+	system usage: CPU: user: 9.34 s, system: 1.98 s, elapsed: 27.00 s
+2022-04-27 06:33:55.501 CEST [18308] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.64 s, system: 0.41 s, elapsed: 5.82 s
+2022-04-27 06:35:40.390 CEST [18969] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 324891 removed, 10461423 remain, 461213 are dead but not yet removable, oldest xmin: 207394733
+	index scan needed: 200490 pages from table (25.72% of total) had 231140 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1874634 hits, 0 misses, 0 dirtied
+	WAL usage: 904173 records, 0 full page images, 51733092 bytes
+	system usage: CPU: user: 9.46 s, system: 2.08 s, elapsed: 27.65 s
+2022-04-27 06:35:45.787 CEST [18969] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300625 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.52 s, system: 0.34 s, elapsed: 5.39 s
+2022-04-27 06:36:10.009 CEST [20430] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 342427 removed, 10463602 remain, 449186 are dead but not yet removable, oldest xmin: 210067305
+	index scan needed: 90743 pages from table (11.64% of total) had 106229 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1764887 hits, 0 misses, 0 dirtied
+	WAL usage: 762211 records, 0 full page images, 44308244 bytes
+	system usage: CPU: user: 8.15 s, system: 1.38 s, elapsed: 24.21 s
+2022-04-27 06:36:15.699 CEST [22388] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.002 MB/s, avg write rate: 0.002 MB/s
+	buffer usage: 300564 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.67 s, system: 0.48 s, elapsed: 5.67 s
+2022-04-27 06:36:50.917 CEST [22841] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 354432 removed, 10452328 remain, 432912 are dead but not yet removable, oldest xmin: 212515576
+	index scan needed: 155558 pages from table (19.96% of total) had 182062 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.470 MB/s
+	buffer usage: 1829701 hits, 0 misses, 62541 dirtied
+	WAL usage: 828214 records, 0 full page images, 47607637 bytes
+	system usage: CPU: user: 8.74 s, system: 1.39 s, elapsed: 35.19 s
+2022-04-27 06:36:51.462 CEST [20073] LOG:  checkpoint complete: wrote 2614582 buffers (62.3%); 0 WAL file(s) added, 646 removed, 20531 recycled; write=809.475 s, sync=0.077 s, total=813.858 s; sync files=301, longest=0.035 s, average=0.001 s; distance=21685277 kB, estimate=21964841 kB
+2022-04-27 06:37:16.421 CEST [25676] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 300347 removed, 10471820 remain, 477889 are dead but not yet removable, oldest xmin: 215387886
+	index scan needed: 77375 pages from table (9.93% of total) had 78569 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.324 MB/s
+	buffer usage: 1751505 hits, 0 misses, 4224 dirtied
+	WAL usage: 716641 records, 0 full page images, 41631863 bytes
+	system usage: CPU: user: 8.29 s, system: 1.83 s, elapsed: 25.49 s
+2022-04-27 06:37:21.856 CEST [25676] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.53 s, system: 0.37 s, elapsed: 5.43 s
+2022-04-27 06:37:39.039 CEST [16171] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 4459881 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 169474693 remain, 0 are dead but not yet removable, oldest xmin: 169472519
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 6.880 MB/s, avg write rate: 11.914 MB/s
+	buffer usage: 6832797 hits, 2093542 misses, 3625420 dirtied
+	WAL usage: 7243134 records, 3144504 full page images, 6710091967 bytes
+	system usage: CPU: user: 81.80 s, system: 20.43 s, elapsed: 594.32 s
+2022-04-27 06:37:46.698 CEST [16171] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 32.862 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 172281 hits, 128867 misses, 4 dirtied
+	system usage: CPU: user: 3.46 s, system: 0.52 s, elapsed: 7.65 s
+2022-04-27 06:37:46.949 CEST [28194] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 779406 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 335677 removed, 10476229 remain, 456392 are dead but not yet removable, oldest xmin: 217996412
+	index scan needed: 115147 pages from table (14.77% of total) had 134803 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1789292 hits, 0 misses, 0 dirtied
+	WAL usage: 767686 records, 0 full page images, 44377501 bytes
+	system usage: CPU: user: 8.69 s, system: 1.50 s, elapsed: 25.08 s
+2022-04-27 06:38:17.573 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 06:39:10.485 CEST [30578] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 337130 removed, 10467788 remain, 467871 are dead but not yet removable, oldest xmin: 225220671
+	index scan needed: 255519 pages from table (32.47% of total) had 326478 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.280 MB/s
+	buffer usage: 1944951 hits, 1 misses, 39795 dirtied
+	WAL usage: 959076 records, 107066 full page images, 250315854 bytes
+	system usage: CPU: user: 10.04 s, system: 2.04 s, elapsed: 23.69 s
+2022-04-27 06:39:15.349 CEST [30578] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.003 MB/s, avg write rate: 3.695 MB/s
+	buffer usage: 300508 hits, 7 misses, 9203 dirtied
+	system usage: CPU: user: 2.55 s, system: 0.29 s, elapsed: 4.86 s
+2022-04-27 06:40:10.768 CEST [30942] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 352187 removed, 10452207 remain, 452299 are dead but not yet removable, oldest xmin: 230423646
+	index scan needed: 122371 pages from table (15.55% of total) had 137595 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 5.124 MB/s
+	buffer usage: 1811806 hits, 0 misses, 62875 dirtied
+	WAL usage: 845655 records, 0 full page images, 48921746 bytes
+	system usage: CPU: user: 9.05 s, system: 2.03 s, elapsed: 23.96 s
+2022-04-27 06:40:15.232 CEST [30942] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.710 MB/s
+	buffer usage: 300527 hits, 0 misses, 6195 dirtied
+	system usage: CPU: user: 2.41 s, system: 0.28 s, elapsed: 4.46 s
+2022-04-27 06:41:09.592 CEST [31298] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 390790 removed, 10412116 remain, 412170 are dead but not yet removable, oldest xmin: 235636966
+	index scan needed: 121232 pages from table (15.40% of total) had 134261 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 4.148 MB/s
+	buffer usage: 1810669 hits, 0 misses, 48352 dirtied
+	WAL usage: 921583 records, 0 full page images, 53455004 bytes
+	system usage: CPU: user: 9.08 s, system: 1.98 s, elapsed: 22.76 s
+2022-04-27 06:41:13.692 CEST [31298] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.001 MB/s, avg write rate: 0.003 MB/s
+	buffer usage: 300541 hits, 2 misses, 7 dirtied
+	system usage: CPU: user: 2.49 s, system: 0.32 s, elapsed: 4.09 s
+2022-04-27 06:42:05.577 CEST [31660] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 395283 removed, 10407671 remain, 407398 are dead but not yet removable, oldest xmin: 240859596
+	index scan needed: 114573 pages from table (14.56% of total) had 126349 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1804008 hits, 0 misses, 0 dirtied
+	WAL usage: 930242 records, 0 full page images, 54035024 bytes
+	system usage: CPU: user: 9.02 s, system: 1.92 s, elapsed: 18.74 s
+2022-04-27 06:42:09.414 CEST [31660] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.37 s, system: 0.20 s, elapsed: 3.83 s
+2022-04-27 06:43:05.623 CEST [32016] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 394297 removed, 10408440 remain, 408075 are dead but not yet removable, oldest xmin: 246091038
+	index scan needed: 112299 pages from table (14.27% of total) had 123912 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114016 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1801733 hits, 0 misses, 0 dirtied
+	WAL usage: 925602 records, 0 full page images, 53782384 bytes
+	system usage: CPU: user: 8.98 s, system: 1.99 s, elapsed: 18.76 s
+2022-04-27 06:43:09.373 CEST [32016] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300527 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.31 s, system: 0.18 s, elapsed: 3.74 s
+2022-04-27 06:43:16.076 CEST [32016] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 43.761 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 151180 hits, 149848 misses, 2 dirtied
+	system usage: CPU: user: 3.69 s, system: 0.91 s, elapsed: 6.68 s
+2022-04-27 06:44:22.451 CEST [32467] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 405431 removed, 10393643 remain, 393401 are dead but not yet removable, oldest xmin: 252576677
+	index scan needed: 293812 pages from table (37.33% of total) had 344883 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1983245 hits, 2 misses, 0 dirtied
+	WAL usage: 1111991 records, 0 full page images, 63389451 bytes
+	system usage: CPU: user: 10.10 s, system: 1.94 s, elapsed: 20.61 s
+2022-04-27 06:44:26.337 CEST [32467] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.004 MB/s, avg write rate: 0.004 MB/s
+	buffer usage: 300523 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.34 s, system: 0.26 s, elapsed: 3.88 s
+2022-04-27 06:45:20.347 CEST [357] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 395760 removed, 10407628 remain, 407535 are dead but not yet removable, oldest xmin: 257812347
+	index scan needed: 87619 pages from table (11.13% of total) had 96693 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1777055 hits, 0 misses, 0 dirtied
+	WAL usage: 899243 records, 0 full page images, 52478502 bytes
+	system usage: CPU: user: 8.93 s, system: 1.88 s, elapsed: 18.50 s
+2022-04-27 06:45:24.065 CEST [357] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300527 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.24 s, system: 0.21 s, elapsed: 3.71 s
+2022-04-27 06:46:20.415 CEST [728] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 393596 removed, 10408722 remain, 408558 are dead but not yet removable, oldest xmin: 263046084
+	index scan needed: 96335 pages from table (12.24% of total) had 105127 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1785772 hits, 0 misses, 0 dirtied
+	WAL usage: 904800 records, 0 full page images, 52717233 bytes
+	system usage: CPU: user: 8.98 s, system: 1.85 s, elapsed: 18.56 s
+2022-04-27 06:46:24.224 CEST [728] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300526 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.38 s, system: 0.16 s, elapsed: 3.80 s
+2022-04-27 06:47:20.668 CEST [1129] LOG:  automatic aggressive vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 392148 removed, 10409454 remain, 409245 are dead but not yet removable, oldest xmin: 268281715
+	index scan needed: 107758 pages from table (13.69% of total) had 117364 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1797196 hits, 0 misses, 0 dirtied
+	WAL usage: 916550 records, 0 full page images, 53287221 bytes
+	system usage: CPU: user: 9.10 s, system: 1.93 s, elapsed: 18.79 s
+2022-04-27 06:47:24.452 CEST [1129] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300527 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.33 s, system: 0.19 s, elapsed: 3.78 s
+2022-04-27 06:48:20.632 CEST [1497] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 392690 removed, 10408741 remain, 408481 are dead but not yet removable, oldest xmin: 273516657
+	index scan needed: 107893 pages from table (13.71% of total) had 118019 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1797327 hits, 0 misses, 0 dirtied
+	WAL usage: 919997 records, 0 full page images, 53488851 bytes
+	system usage: CPU: user: 9.07 s, system: 1.90 s, elapsed: 18.75 s
+2022-04-27 06:48:24.408 CEST [1497] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300519 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.32 s, system: 0.19 s, elapsed: 3.77 s
+2022-04-27 06:49:28.334 CEST [1864] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 311404 removed, 10490187 remain, 489820 are dead but not yet removable, oldest xmin: 278679373
+	index scan needed: 108861 pages from table (13.83% of total) had 119386 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1798298 hits, 0 misses, 0 dirtied
+	WAL usage: 765411 records, 0 full page images, 44268573 bytes
+	system usage: CPU: user: 9.08 s, system: 2.14 s, elapsed: 26.43 s
+2022-04-27 06:49:33.792 CEST [1864] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.001 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300534 hits, 3 misses, 3 dirtied
+	system usage: CPU: user: 2.54 s, system: 0.37 s, elapsed: 5.45 s
+2022-04-27 06:50:28.838 CEST [2228] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 331674 removed, 10470447 remain, 469774 are dead but not yet removable, oldest xmin: 283814424
+	index scan needed: 158575 pages from table (20.15% of total) had 178413 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1848014 hits, 0 misses, 0 dirtied
+	WAL usage: 857133 records, 0 full page images, 49244529 bytes
+	system usage: CPU: user: 9.38 s, system: 1.95 s, elapsed: 26.93 s
+2022-04-27 06:50:34.167 CEST [2228] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300527 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.43 s, system: 0.36 s, elapsed: 5.32 s
+2022-04-27 06:51:28.603 CEST [2590] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 330359 removed, 10472373 remain, 470969 are dead but not yet removable, oldest xmin: 288674708
+	index scan needed: 139280 pages from table (17.70% of total) had 157648 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1828717 hits, 0 misses, 0 dirtied
+	WAL usage: 831867 records, 0 full page images, 47907878 bytes
+	system usage: CPU: user: 9.20 s, system: 2.02 s, elapsed: 26.67 s
+2022-04-27 06:51:34.010 CEST [2590] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300519 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.53 s, system: 0.35 s, elapsed: 5.40 s
+2022-04-27 06:51:52.347 CEST [20073] LOG:  checkpoint complete: wrote 3104262 buffers (74.0%); 0 WAL file(s) added, 0 removed, 26352 recycled; write=809.422 s, sync=0.083 s, total=814.775 s; sync files=332, longest=0.061 s, average=0.001 s; distance=26984123 kB, estimate=26984123 kB
+2022-04-27 06:52:31.657 CEST [2966] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 318692 removed, 10484432 remain, 483291 are dead but not yet removable, oldest xmin: 293585620
+	index scan needed: 149644 pages from table (19.01% of total) had 168938 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 1.030 MB/s
+	buffer usage: 1839081 hits, 0 misses, 15681 dirtied
+	WAL usage: 818214 records, 0 full page images, 46997636 bytes
+	system usage: CPU: user: 9.59 s, system: 2.07 s, elapsed: 29.72 s
+2022-04-27 06:52:37.377 CEST [2966] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300527 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.70 s, system: 0.44 s, elapsed: 5.71 s
+2022-04-27 06:53:17.457 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 06:53:32.159 CEST [3346] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 319681 removed, 10484397 remain, 483134 are dead but not yet removable, oldest xmin: 298699256
+	index scan needed: 162480 pages from table (20.64% of total) had 184649 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114017 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 1.043 MB/s
+	buffer usage: 1851915 hits, 0 misses, 16129 dirtied
+	WAL usage: 833821 records, 166055 full page images, 347315271 bytes
+	system usage: CPU: user: 9.81 s, system: 2.12 s, elapsed: 30.21 s
+2022-04-27 06:53:40.821 CEST [3346] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 3.891 MB/s
+	buffer usage: 300519 hits, 0 misses, 17257 dirtied
+	system usage: CPU: user: 2.80 s, system: 0.56 s, elapsed: 8.66 s
+2022-04-27 06:54:36.474 CEST [3702] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 787046 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 288306 removed, 10516869 remain, 515849 are dead but not yet removable, oldest xmin: 303728606
+	index scan needed: 284840 pages from table (36.19% of total) had 346181 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114018 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 2.798 MB/s
+	buffer usage: 1974278 hits, 0 misses, 49435 dirtied
+	WAL usage: 913963 records, 1251 full page images, 53910367 bytes
+	system usage: CPU: user: 8.22 s, system: 1.79 s, elapsed: 34.50 s
+2022-04-27 06:54:42.048 CEST [3702] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 3.054 MB/s
+	buffer usage: 300527 hits, 0 misses, 8718 dirtied
+	system usage: CPU: user: 1.58 s, system: 0.08 s, elapsed: 5.57 s
+2022-04-27 06:55:47.623 CEST [3827] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 0
+	pages: 0 removed, 787046 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 372047 removed, 10351365 remain, 356923 are dead but not yet removable, oldest xmin: 305106385
+	index scan bypassed: 13035 pages from table (1.66% of total) have 13267 dead item identifiers
+	avg read rate: 0.000 MB/s, avg write rate: 7.155 MB/s
+	buffer usage: 1562286 hits, 0 misses, 167191 dirtied
+	WAL usage: 729570 records, 0 full page images, 43468891 bytes
+	system usage: CPU: user: 5.35 s, system: 0.88 s, elapsed: 45.63 s
+2022-04-27 06:56:10.874 CEST [4156] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.736 MB/s
+	buffer usage: 300552 hits, 0 misses, 12449 dirtied
+	system usage: CPU: user: 3.17 s, system: 1.01 s, elapsed: 8.88 s
+2022-04-27 06:56:37.175 CEST [1497] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 7249304 remain, 0 skipped due to pins, 3143953 skipped frozen
+	tuples: 0 removed, 275472274 remain, 0 are dead but not yet removable, oldest xmin: 275469215
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 6.364 MB/s, avg write rate: 10.774 MB/s
+	buffer usage: 6614927 hits, 1605539 misses, 2718190 dirtied
+	WAL usage: 6894696 records, 2789977 full page images, 5981138760 bytes
+	system usage: CPU: user: 88.74 s, system: 20.02 s, elapsed: 492.74 s
+2022-04-27 06:56:43.180 CEST [1497] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 58.594 MB/s, avg write rate: 0.002 MB/s
+	buffer usage: 121203 hits, 180181 misses, 7 dirtied
+	system usage: CPU: user: 3.20 s, system: 0.68 s, elapsed: 6.00 s
+2022-04-27 06:57:24.227 CEST [4513] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794742 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 429336 removed, 10399158 remain, 400807 are dead but not yet removable, oldest xmin: 313833116
+	index scan needed: 376901 pages from table (47.42% of total) had 489087 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.096 MB/s
+	buffer usage: 2081753 hits, 1 misses, 1087 dirtied
+	WAL usage: 1178769 records, 1 full page images, 67072047 bytes
+	system usage: CPU: user: 10.88 s, system: 2.20 s, elapsed: 22.21 s
+2022-04-27 06:57:28.216 CEST [4513] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.002 MB/s, avg write rate: 0.005 MB/s
+	buffer usage: 300529 hits, 4 misses, 10 dirtied
+	system usage: CPU: user: 2.36 s, system: 0.34 s, elapsed: 3.98 s
+2022-04-27 06:58:20.753 CEST [4875] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 412642 removed, 10416606 remain, 416660 are dead but not yet removable, oldest xmin: 319019132
+	index scan needed: 74061 pages from table (9.32% of total) had 82205 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1779305 hits, 0 misses, 0 dirtied
+	WAL usage: 892472 records, 0 full page images, 52283421 bytes
+	system usage: CPU: user: 9.05 s, system: 1.95 s, elapsed: 18.73 s
+2022-04-27 06:58:24.515 CEST [4875] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300531 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.32 s, system: 0.18 s, elapsed: 3.76 s
+2022-04-27 06:59:20.878 CEST [5231] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 410851 removed, 10415368 remain, 415807 are dead but not yet removable, oldest xmin: 324210846
+	index scan needed: 83239 pages from table (10.47% of total) had 91371 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1788487 hits, 0 misses, 0 dirtied
+	WAL usage: 901916 records, 0 full page images, 52736717 bytes
+	system usage: CPU: user: 9.15 s, system: 1.93 s, elapsed: 18.83 s
+2022-04-27 06:59:24.671 CEST [5231] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.001 MB/s
+	buffer usage: 300527 hits, 0 misses, 1 dirtied
+	system usage: CPU: user: 2.34 s, system: 0.19 s, elapsed: 3.79 s
+2022-04-27 07:00:20.975 CEST [5587] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 410567 removed, 10414049 remain, 414329 are dead but not yet removable, oldest xmin: 329398186
+	index scan needed: 92230 pages from table (11.60% of total) had 100963 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1797476 hits, 0 misses, 0 dirtied
+	WAL usage: 914540 records, 0 full page images, 53384796 bytes
+	system usage: CPU: user: 9.09 s, system: 2.02 s, elapsed: 18.91 s
+2022-04-27 07:00:24.689 CEST [5587] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.27 s, system: 0.18 s, elapsed: 3.71 s
+2022-04-27 07:01:20.994 CEST [5954] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 411467 removed, 10412741 remain, 412674 are dead but not yet removable, oldest xmin: 334600944
+	index scan needed: 93485 pages from table (11.76% of total) had 101756 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1798730 hits, 0 misses, 0 dirtied
+	WAL usage: 919081 records, 0 full page images, 53638724 bytes
+	system usage: CPU: user: 9.13 s, system: 1.99 s, elapsed: 18.93 s
+2022-04-27 07:01:24.733 CEST [5954] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300519 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.27 s, system: 0.20 s, elapsed: 3.73 s
+2022-04-27 07:02:21.078 CEST [6310] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 410090 removed, 10413904 remain, 413703 are dead but not yet removable, oldest xmin: 339799982
+	index scan needed: 95214 pages from table (11.98% of total) had 103549 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1800462 hits, 0 misses, 0 dirtied
+	WAL usage: 919969 records, 0 full page images, 53665293 bytes
+	system usage: CPU: user: 9.18 s, system: 2.00 s, elapsed: 18.99 s
+2022-04-27 07:02:24.822 CEST [6310] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.29 s, system: 0.19 s, elapsed: 3.74 s
+2022-04-27 07:03:21.144 CEST [6672] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 6 skipped due to pins, 0 skipped frozen
+	tuples: 407213 removed, 10416217 remain, 416004 are dead but not yet removable, oldest xmin: 344994241
+	index scan needed: 95167 pages from table (11.97% of total) had 103770 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114027 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1800409 hits, 0 misses, 0 dirtied
+	WAL usage: 916303 records, 0 full page images, 53449528 bytes
+	system usage: CPU: user: 9.21 s, system: 2.03 s, elapsed: 19.05 s
+2022-04-27 07:03:24.862 CEST [6672] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300519 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.28 s, system: 0.17 s, elapsed: 3.71 s
+2022-04-27 07:03:31.477 CEST [6672] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 57.110 MB/s, avg write rate: 0.002 MB/s
+	buffer usage: 108400 hits, 192987 misses, 7 dirtied
+	system usage: CPU: user: 3.36 s, system: 1.05 s, elapsed: 6.59 s
+2022-04-27 07:04:22.880 CEST [7028] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 415517 removed, 10403877 remain, 403348 are dead but not yet removable, oldest xmin: 350164505
+	index scan needed: 244442 pages from table (30.75% of total) had 286250 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1949688 hits, 0 misses, 0 dirtied
+	WAL usage: 1063842 records, 0 full page images, 60903446 bytes
+	system usage: CPU: user: 10.13 s, system: 2.05 s, elapsed: 20.76 s
+2022-04-27 07:04:26.781 CEST [7028] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300534 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.33 s, system: 0.29 s, elapsed: 3.90 s
+2022-04-27 07:05:21.031 CEST [7409] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 407685 removed, 10416357 remain, 416258 are dead but not yet removable, oldest xmin: 355368870
+	index scan needed: 86502 pages from table (10.88% of total) had 95609 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1791747 hits, 0 misses, 0 dirtied
+	WAL usage: 908035 records, 0 full page images, 53038318 bytes
+	system usage: CPU: user: 9.12 s, system: 2.02 s, elapsed: 18.91 s
+2022-04-27 07:05:24.841 CEST [7409] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300535 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.34 s, system: 0.20 s, elapsed: 3.80 s
+2022-04-27 07:06:05.826 CEST [7676] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 410233 removed, 10411455 remain, 410854 are dead but not yet removable, oldest xmin: 359276756
+	index scan needed: 81479 pages from table (10.25% of total) had 88841 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1786733 hits, 0 misses, 0 dirtied
+	WAL usage: 902509 records, 0 full page images, 52735062 bytes
+	system usage: CPU: user: 8.99 s, system: 1.85 s, elapsed: 18.72 s
+2022-04-27 07:06:09.516 CEST [7676] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300596 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.26 s, system: 0.16 s, elapsed: 3.69 s
+2022-04-27 07:06:52.126 CEST [20073] LOG:  checkpoint complete: wrote 2951382 buffers (70.4%); 0 WAL file(s) added, 0 removed, 25030 recycled; write=809.553 s, sync=0.021 s, total=814.670 s; sync files=305, longest=0.015 s, average=0.001 s; distance=25631514 kB, estimate=26848863 kB
+2022-04-27 07:07:23.821 CEST [8130] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 408772 removed, 10415888 remain, 415783 are dead but not yet removable, oldest xmin: 365762593
+	index scan needed: 101248 pages from table (12.74% of total) had 110549 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 2.817 MB/s
+	buffer usage: 1806494 hits, 0 misses, 31278 dirtied
+	WAL usage: 926243 records, 0 full page images, 53996941 bytes
+	system usage: CPU: user: 9.30 s, system: 2.01 s, elapsed: 21.68 s
+2022-04-27 07:07:27.832 CEST [8130] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300520 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.43 s, system: 0.30 s, elapsed: 4.01 s
+2022-04-27 07:08:17.219 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 07:08:21.839 CEST [8493] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 408801 removed, 10414825 remain, 414541 are dead but not yet removable, oldest xmin: 370961877
+	index scan needed: 95943 pages from table (12.07% of total) had 104993 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.617 MB/s
+	buffer usage: 1801190 hits, 0 misses, 6223 dirtied
+	WAL usage: 924291 records, 130923 full page images, 294537772 bytes
+	system usage: CPU: user: 9.32 s, system: 2.01 s, elapsed: 19.69 s
+2022-04-27 07:08:26.779 CEST [8493] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 5.074 MB/s
+	buffer usage: 300523 hits, 0 misses, 12835 dirtied
+	system usage: CPU: user: 2.39 s, system: 0.25 s, elapsed: 4.94 s
+2022-04-27 07:09:24.386 CEST [8849] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 350251 removed, 10472919 remain, 472571 are dead but not yet removable, oldest xmin: 376073378
+	index scan needed: 135013 pages from table (16.98% of total) had 149465 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.047 MB/s
+	buffer usage: 1840262 hits, 0 misses, 34660 dirtied
+	WAL usage: 854400 records, 2028 full page images, 52899302 bytes
+	system usage: CPU: user: 9.42 s, system: 2.02 s, elapsed: 22.22 s
+2022-04-27 07:09:28.850 CEST [8849] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.561 MB/s
+	buffer usage: 300531 hits, 0 misses, 5854 dirtied
+	system usage: CPU: user: 2.45 s, system: 0.27 s, elapsed: 4.46 s
+2022-04-27 07:10:24.847 CEST [9212] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 368013 removed, 10457279 remain, 456672 are dead but not yet removable, oldest xmin: 381282522
+	index scan needed: 113223 pages from table (14.24% of total) had 126635 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.648 MB/s
+	buffer usage: 1818472 hits, 0 misses, 42357 dirtied
+	WAL usage: 864245 records, 0 full page images, 50131721 bytes
+	system usage: CPU: user: 9.36 s, system: 2.03 s, elapsed: 22.67 s
+2022-04-27 07:10:29.149 CEST [9212] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.216 MB/s
+	buffer usage: 300520 hits, 0 misses, 4882 dirtied
+	system usage: CPU: user: 2.35 s, system: 0.28 s, elapsed: 4.30 s
+2022-04-27 07:11:38.039 CEST [9568] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 306242 removed, 10519806 remain, 519283 are dead but not yet removable, oldest xmin: 386423623
+	index scan needed: 108414 pages from table (13.64% of total) had 121282 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.051 MB/s
+	buffer usage: 1813663 hits, 0 misses, 55987 dirtied
+	WAL usage: 743752 records, 0 full page images, 42990720 bytes
+	system usage: CPU: user: 9.44 s, system: 2.29 s, elapsed: 35.84 s
+2022-04-27 07:11:44.727 CEST [9568] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 1.650 MB/s
+	buffer usage: 300527 hits, 0 misses, 5652 dirtied
+	system usage: CPU: user: 2.71 s, system: 0.51 s, elapsed: 6.68 s
+2022-04-27 07:12:31.266 CEST [9928] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 333522 removed, 10495939 remain, 494485 are dead but not yet removable, oldest xmin: 391529246
+	index scan needed: 168654 pages from table (21.22% of total) had 196130 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.543 MB/s
+	buffer usage: 1873901 hits, 0 misses, 8082 dirtied
+	WAL usage: 847921 records, 0 full page images, 48656664 bytes
+	system usage: CPU: user: 9.78 s, system: 2.16 s, elapsed: 29.05 s
+2022-04-27 07:12:36.910 CEST [9928] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.63 s, system: 0.44 s, elapsed: 5.64 s
+2022-04-27 07:13:29.748 CEST [10290] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 334671 removed, 10493339 remain, 492311 are dead but not yet removable, oldest xmin: 396644542
+	index scan needed: 145194 pages from table (18.26% of total) had 167060 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1850441 hits, 0 misses, 0 dirtied
+	WAL usage: 828704 records, 0 full page images, 47703143 bytes
+	system usage: CPU: user: 9.73 s, system: 2.13 s, elapsed: 27.53 s
+2022-04-27 07:13:35.299 CEST [10290] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300520 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.62 s, system: 0.39 s, elapsed: 5.55 s
+2022-04-27 07:14:29.886 CEST [10646] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 330189 removed, 10498221 remain, 497177 are dead but not yet removable, oldest xmin: 401746548
+	index scan needed: 140472 pages from table (17.67% of total) had 159869 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1845716 hits, 0 misses, 0 dirtied
+	WAL usage: 817937 records, 0 full page images, 47103004 bytes
+	system usage: CPU: user: 9.76 s, system: 2.19 s, elapsed: 27.65 s
+2022-04-27 07:14:35.776 CEST [10646] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.66 s, system: 0.44 s, elapsed: 5.89 s
+2022-04-27 07:15:45.518 CEST [11093] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 334560 removed, 10495328 remain, 494932 are dead but not yet removable, oldest xmin: 408091724
+	index scan needed: 166774 pages from table (20.98% of total) had 191420 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1872022 hits, 0 misses, 0 dirtied
+	WAL usage: 856540 records, 0 full page images, 49192288 bytes
+	system usage: CPU: user: 10.01 s, system: 2.29 s, elapsed: 28.24 s
+2022-04-27 07:15:51.165 CEST [11093] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300520 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.64 s, system: 0.44 s, elapsed: 5.64 s
+2022-04-27 07:16:44.989 CEST [11457] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 331997 removed, 10499122 remain, 497856 are dead but not yet removable, oldest xmin: 413167781
+	index scan needed: 137110 pages from table (17.25% of total) had 157424 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1842356 hits, 0 misses, 0 dirtied
+	WAL usage: 815917 records, 0 full page images, 47016959 bytes
+	system usage: CPU: user: 9.80 s, system: 2.24 s, elapsed: 27.71 s
+2022-04-27 07:16:50.586 CEST [11457] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.60 s, system: 0.44 s, elapsed: 5.59 s
+2022-04-27 07:17:45.139 CEST [11815] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 332281 removed, 10499627 remain, 498335 are dead but not yet removable, oldest xmin: 418233569
+	index scan needed: 146487 pages from table (18.43% of total) had 167923 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1851732 hits, 0 misses, 0 dirtied
+	WAL usage: 826067 records, 0 full page images, 47534579 bytes
+	system usage: CPU: user: 9.88 s, system: 2.21 s, elapsed: 27.83 s
+2022-04-27 07:17:50.793 CEST [11815] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300520 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.64 s, system: 0.45 s, elapsed: 5.65 s
+2022-04-27 07:18:45.033 CEST [12178] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 332089 removed, 10500575 remain, 499313 are dead but not yet removable, oldest xmin: 423319032
+	index scan needed: 150147 pages from table (18.89% of total) had 172497 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1855392 hits, 0 misses, 0 dirtied
+	WAL usage: 829882 records, 0 full page images, 47725070 bytes
+	system usage: CPU: user: 9.77 s, system: 2.21 s, elapsed: 27.72 s
+2022-04-27 07:18:50.619 CEST [12178] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.57 s, system: 0.46 s, elapsed: 5.58 s
+2022-04-27 07:19:16.131 CEST [12623] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 361452 removed, 10498243 remain, 483480 are dead but not yet removable, oldest xmin: 426154313
+	index scan needed: 95782 pages from table (12.05% of total) had 113389 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1801027 hits, 0 misses, 0 dirtied
+	WAL usage: 769210 records, 0 full page images, 44738882 bytes
+	system usage: CPU: user: 8.90 s, system: 1.57 s, elapsed: 25.50 s
+2022-04-27 07:19:40.594 CEST [14689] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 318984 removed, 10487534 remain, 494593 are dead but not yet removable, oldest xmin: 428313250
+	index scan needed: 53659 pages from table (6.75% of total) had 54716 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1758878 hits, 0 misses, 0 dirtied
+	WAL usage: 694665 records, 0 full page images, 40638871 bytes
+	system usage: CPU: user: 8.14 s, system: 1.64 s, elapsed: 24.45 s
+2022-04-27 07:19:45.947 CEST [14689] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300528 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.51 s, system: 0.31 s, elapsed: 5.35 s
+2022-04-27 07:20:11.252 CEST [17108] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 359307 removed, 10494709 remain, 479705 are dead but not yet removable, oldest xmin: 430827907
+	index scan needed: 96219 pages from table (12.10% of total) had 112377 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1801464 hits, 0 misses, 0 dirtied
+	WAL usage: 765878 records, 0 full page images, 44504133 bytes
+	system usage: CPU: user: 8.79 s, system: 1.50 s, elapsed: 25.29 s
+2022-04-27 07:20:16.972 CEST [19159] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300545 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.64 s, system: 0.54 s, elapsed: 5.70 s
+2022-04-27 07:20:43.078 CEST [19628] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 366904 removed, 10491441 remain, 474327 are dead but not yet removable, oldest xmin: 433449186
+	index scan needed: 142417 pages from table (17.92% of total) had 167365 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1847664 hits, 0 misses, 0 dirtied
+	WAL usage: 821169 records, 0 full page images, 47358622 bytes
+	system usage: CPU: user: 9.16 s, system: 1.53 s, elapsed: 26.09 s
+2022-04-27 07:20:48.949 CEST [21760] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 300553 hits, 0 misses, 0 dirtied
+	system usage: CPU: user: 2.74 s, system: 0.58 s, elapsed: 5.86 s
+2022-04-27 07:21:15.288 CEST [22238] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 369850 removed, 10493124 remain, 474028 are dead but not yet removable, oldest xmin: 436150040
+	index scan needed: 150633 pages from table (18.95% of total) had 178809 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 1855882 hits, 0 misses, 0 dirtied
+	WAL usage: 828921 records, 0 full page images, 47759940 bytes
+	system usage: CPU: user: 9.32 s, system: 1.54 s, elapsed: 26.32 s
+2022-04-27 07:21:39.975 CEST [9212] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 10095196 remain, 0 skipped due to pins, 5933316 skipped frozen
+	tuples: 0 removed, 383615066 remain, 0 are dead but not yet removable, oldest xmin: 383610611
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 4.832 MB/s, avg write rate: 11.248 MB/s
+	buffer usage: 6677436 hits, 1659673 misses, 3863266 dirtied
+	WAL usage: 7007616 records, 2846453 full page images, 6100602953 bytes
+	system usage: CPU: user: 96.43 s, system: 22.00 s, elapsed: 670.80 s
+2022-04-27 07:21:44.910 CEST [24371] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 3 skipped due to pins, 0 skipped frozen
+	tuples: 319921 removed, 10490035 remain, 496974 are dead but not yet removable, oldest xmin: 438381679
+	index scan needed: 60522 pages from table (7.61% of total) had 62013 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114028 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 1.848 MB/s
+	buffer usage: 1765745 hits, 0 misses, 28022 dirtied
+	WAL usage: 703716 records, 0 full page images, 41089986 bytes
+	system usage: CPU: user: 8.66 s, system: 1.71 s, elapsed: 29.61 s
+2022-04-27 07:21:48.965 CEST [9212] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 46.732 MB/s, avg write rate: 0.000 MB/s
+	buffer usage: 86637 hits, 215101 misses, 2 dirtied
+	system usage: CPU: user: 3.42 s, system: 1.13 s, elapsed: 8.98 s
+2022-04-27 07:21:50.426 CEST [24371] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.002 MB/s, avg write rate: 0.003 MB/s
+	buffer usage: 300542 hits, 5 misses, 8 dirtied
+	system usage: CPU: user: 2.71 s, system: 0.49 s, elapsed: 5.51 s
+2022-04-27 07:21:51.753 CEST [20073] LOG:  checkpoint complete: wrote 2689532 buffers (64.1%); 0 WAL file(s) added, 0 removed, 22016 recycled; write=809.830 s, sync=0.092 s, total=814.535 s; sync files=325, longest=0.069 s, average=0.001 s; distance=22544275 kB, estimate=26418404 kB
+2022-04-27 07:23:10.806 CEST [27489] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 1 skipped due to pins, 0 skipped frozen
+	tuples: 431519 removed, 10399985 remain, 399724 are dead but not yet removable, oldest xmin: 446378756
+	index scan needed: 328076 pages from table (41.27% of total) had 405815 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114029 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 0.021 MB/s
+	buffer usage: 2033325 hits, 0 misses, 231 dirtied
+	WAL usage: 1153239 records, 0 full page images, 65765885 bytes
+	system usage: CPU: user: 10.74 s, system: 2.20 s, elapsed: 21.74 s
+2022-04-27 07:23:14.814 CEST [27489] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.003 MB/s, avg write rate: 0.003 MB/s
+	buffer usage: 300520 hits, 7 misses, 7 dirtied
+	system usage: CPU: user: 2.42 s, system: 0.30 s, elapsed: 4.00 s
+2022-04-27 07:23:17.861 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 07:24:11.238 CEST [27851] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 345325 removed, 10488717 remain, 488654 are dead but not yet removable, oldest xmin: 451520739
+	index scan needed: 79231 pages from table (9.97% of total) had 88089 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114029 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 3.413 MB/s
+	buffer usage: 1784479 hits, 0 misses, 38737 dirtied
+	WAL usage: 770816 records, 45004 full page images, 126778614 bytes
+	system usage: CPU: user: 9.24 s, system: 2.09 s, elapsed: 22.16 s
+2022-04-27 07:24:15.898 CEST [27851] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 3.972 MB/s
+	buffer usage: 300536 hits, 0 misses, 9478 dirtied
+	system usage: CPU: user: 2.40 s, system: 0.23 s, elapsed: 4.65 s
+2022-04-27 07:25:14.258 CEST [28208] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 4 skipped due to pins, 0 skipped frozen
+	tuples: 375548 removed, 10455814 remain, 455569 are dead but not yet removable, oldest xmin: 456710192
+	index scan needed: 110894 pages from table (13.95% of total) had 124394 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114029 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 5.615 MB/s
+	buffer usage: 1816140 hits, 0 misses, 72375 dirtied
+	WAL usage: 861880 records, 0 full page images, 50027012 bytes
+	system usage: CPU: user: 9.51 s, system: 2.00 s, elapsed: 25.17 s
+2022-04-27 07:25:18.875 CEST [28208] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 0.000 MB/s, avg write rate: 2.672 MB/s
+	buffer usage: 300527 hits, 0 misses, 6317 dirtied
+	system usage: CPU: user: 2.50 s, system: 0.32 s, elapsed: 4.61 s
+2022-04-27 07:26:18.709 CEST [28410] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 794939 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 849285 removed, 10000000 remain, 0 are dead but not yet removable, oldest xmin: 459249031
+	index scan needed: 58312 pages from table (7.34% of total) had 66977 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 114029 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 0.000 MB/s, avg write rate: 12.439 MB/s
+	buffer usage: 1763562 hits, 0 misses, 188500 dirtied
+	WAL usage: 1640162 records, 0 full page images, 97196140 bytes
+	system usage: CPU: user: 6.17 s, system: 0.64 s, elapsed: 29.59 s
+2022-04-27 07:26:25.904 CEST [20073] LOG:  checkpoint complete: wrote 820189 buffers (19.6%); 0 WAL file(s) added, 0 removed, 27084 recycled; write=185.748 s, sync=0.001 s, total=188.044 s; sync files=73, longest=0.001 s, average=0.001 s; distance=27734115 kB, estimate=27734115 kB
+2022-04-27 07:26:25.904 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 07:26:26.388 CEST [20073] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 4277 recycled; write=0.066 s, sync=0.001 s, total=0.485 s; sync files=3, longest=0.001 s, average=0.001 s; distance=4379379 kB, estimate=25398641 kB
+2022-04-27 07:26:28.290 CEST [20073] LOG:  checkpoint starting: immediate force wait flush-all
+2022-04-27 07:26:28.375 CEST [20073] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.068 s, sync=0.001 s, total=0.086 s; sync files=4, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=22858777 kB
+2022-04-27 07:26:28.390 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 07:26:28.471 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.065 s, sync=0.001 s, total=0.081 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=20572900 kB
+2022-04-27 07:41:28.607 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 07:41:33.170 CEST [20073] LOG:  checkpoint complete: wrote 11 buffers (0.0%); 0 WAL file(s) added, 7842 removed, 5093 recycled; write=1.098 s, sync=0.001 s, total=4.563 s; sync files=68, longest=0.001 s, average=0.001 s; distance=13244888 kB, estimate=19840099 kB
+2022-04-27 08:17:10.817 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 08:17:10.895 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.065 s, sync=0.001 s, total=0.078 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=17856089 kB
+2022-04-27 08:17:35.983 CEST [12782] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 41662 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 1583156 remain, 0 are dead but not yet removable, oldest xmin: 460832011
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.010 MB/s, avg write rate: 0.012 MB/s
+	buffer usage: 83406 hits, 6 misses, 7 dirtied
+	WAL usage: 41644 records, 7 full page images, 2470728 bytes
+	system usage: CPU: user: 0.63 s, system: 0.08 s, elapsed: 1.15 s
+2022-04-27 08:17:37.540 CEST [12782] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.039 MB/s, avg write rate: 0.023 MB/s
+	buffer usage: 44482 hits, 31 misses, 18 dirtied
+	system usage: CPU: user: 1.33 s, system: 0.03 s, elapsed: 1.55 s
+2022-04-27 08:20:13.579 CEST [13501] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 286578 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 10889846 remain, 0 are dead but not yet removable, oldest xmin: 470136362
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 7.531 MB/s, avg write rate: 7.521 MB/s
+	buffer usage: 341010 hits, 149287 misses, 149098 dirtied
+	WAL usage: 244860 records, 30 full page images, 14508459 bytes
+	system usage: CPU: user: 5.42 s, system: 2.05 s, elapsed: 38.71 s
+2022-04-27 08:20:21.922 CEST [13501] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 36.536 MB/s, avg write rate: 0.009 MB/s
+	buffer usage: 144712 hits, 156048 misses, 40 dirtied
+	system usage: CPU: user: 3.48 s, system: 0.54 s, elapsed: 8.34 s
+2022-04-27 08:22:12.501 CEST [14220] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 534744 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 20319509 remain, 0 are dead but not yet removable, oldest xmin: 479567329
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 7.696 MB/s, avg write rate: 7.673 MB/s
+	buffer usage: 349052 hits, 148218 misses, 147761 dirtied
+	WAL usage: 248196 records, 31 full page images, 14707336 bytes
+	system usage: CPU: user: 4.81 s, system: 1.84 s, elapsed: 37.61 s
+2022-04-27 08:22:21.022 CEST [14220] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 48.739 MB/s, avg write rate: 0.008 MB/s
+	buffer usage: 88122 hits, 212637 misses, 33 dirtied
+	system usage: CPU: user: 3.40 s, system: 0.54 s, elapsed: 8.52 s
+2022-04-27 08:24:14.300 CEST [14955] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 784783 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 29821120 remain, 0 are dead but not yet removable, oldest xmin: 489070068
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 7.573 MB/s, avg write rate: 7.536 MB/s
+	buffer usage: 348693 hits, 152670 misses, 151924 dirtied
+	WAL usage: 250088 records, 30 full page images, 14816911 bytes
+	system usage: CPU: user: 5.32 s, system: 2.06 s, elapsed: 39.37 s
+2022-04-27 08:24:22.658 CEST [14955] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 55.489 MB/s, avg write rate: 0.008 MB/s
+	buffer usage: 63313 hits, 237483 misses, 36 dirtied
+	system usage: CPU: user: 3.08 s, system: 0.56 s, elapsed: 8.35 s
+2022-04-27 08:25:48.048 CEST [15674] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 38.305 MB/s, avg write rate: 3.154 MB/s
+	buffer usage: 43894 hits, 256898 misses, 21152 dirtied
+	system usage: CPU: user: 3.73 s, system: 0.94 s, elapsed: 13.09 s
+2022-04-27 08:28:21.415 CEST [16122] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1192308 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 45306869 remain, 0 are dead but not yet removable, oldest xmin: 504551166
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.739 MB/s, avg write rate: 8.708 MB/s
+	buffer usage: 407727 hits, 409085 misses, 407637 dirtied
+	WAL usage: 407422 records, 51 full page images, 24142730 bytes
+	system usage: CPU: user: 8.81 s, system: 3.94 s, elapsed: 91.42 s
+2022-04-27 08:28:31.782 CEST [16122] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 50.015 MB/s, avg write rate: 1.335 MB/s
+	buffer usage: 35370 hits, 265477 misses, 7085 dirtied
+	system usage: CPU: user: 3.42 s, system: 0.79 s, elapsed: 10.36 s
+2022-04-27 08:30:05.976 CEST [17202] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 33.346 MB/s, avg write rate: 4.395 MB/s
+	buffer usage: 28442 hits, 272401 misses, 35903 dirtied
+	system usage: CPU: user: 4.03 s, system: 1.05 s, elapsed: 15.95 s
+2022-04-27 08:32:10.590 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 08:34:10.726 CEST [17915] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1816132 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 69011980 remain, 0 are dead but not yet removable, oldest xmin: 528255185
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.699 MB/s, avg write rate: 8.666 MB/s
+	buffer usage: 624102 hits, 626493 misses, 624092 dirtied
+	WAL usage: 623817 records, 79 full page images, 36966751 bytes
+	system usage: CPU: user: 13.56 s, system: 5.99 s, elapsed: 140.66 s
+2022-04-27 08:34:22.182 CEST [17915] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 47.268 MB/s, avg write rate: 2.571 MB/s
+	buffer usage: 23655 hits, 277272 misses, 15082 dirtied
+	system usage: CPU: user: 3.24 s, system: 0.81 s, elapsed: 11.45 s
+2022-04-27 08:36:48.005 CEST [13138] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 6943287 remain, 5 skipped due to pins, 0 skipped frozen
+	tuples: 844177 removed, 102945407 remain, 5235103 are dead but not yet removable, oldest xmin: 465459506
+	index scan needed: 5930129 pages from table (85.41% of total) had 5967605 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 1140122 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 13.902 MB/s, avg write rate: 12.689 MB/s
+	buffer usage: 13186954 hits, 7780766 misses, 7102176 dirtied
+	WAL usage: 7899095 records, 847544 full page images, 2130228227 bytes
+	system usage: CPU: user: 134.98 s, system: 80.92 s, elapsed: 1093.14 s
+2022-04-27 08:37:05.065 CEST [13138] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 32.347 MB/s, avg write rate: 5.536 MB/s
+	buffer usage: 18625 hits, 282294 misses, 48310 dirtied
+	system usage: CPU: user: 3.94 s, system: 1.15 s, elapsed: 17.04 s
+2022-04-27 08:41:55.511 CEST [20445] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 2616278 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 99416819 remain, 0 are dead but not yet removable, oldest xmin: 558658184
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.472 MB/s, avg write rate: 8.435 MB/s
+	buffer usage: 800299 hits, 804052 misses, 800486 dirtied
+	WAL usage: 800123 records, 107 full page images, 47430807 bytes
+	system usage: CPU: user: 19.56 s, system: 8.82 s, elapsed: 185.36 s
+2022-04-27 08:43:05.043 CEST [21880] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 37.713 MB/s, avg write rate: 4.151 MB/s
+	buffer usage: 14716 hits, 286332 misses, 31515 dirtied
+	system usage: CPU: user: 3.64 s, system: 1.07 s, elapsed: 14.82 s
+2022-04-27 08:45:48.956 CEST [20073] LOG:  checkpoint complete: wrote 1150901 buffers (27.4%); 0 WAL file(s) added, 0 removed, 33720 recycled; write=809.408 s, sync=0.576 s, total=818.367 s; sync files=538, longest=0.057 s, average=0.002 s; distance=34529620 kB, estimate=34529620 kB
+2022-04-27 08:46:09.695 CEST [22960] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 28.990 MB/s, avg write rate: 5.698 MB/s
+	buffer usage: 12360 hits, 288668 misses, 56735 dirtied
+	system usage: CPU: user: 3.93 s, system: 1.35 s, elapsed: 19.44 s
+2022-04-27 08:47:10.767 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 08:52:54.988 CEST [23760] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 3683921 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 139987865 remain, 0 are dead but not yet removable, oldest xmin: 599233062
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.566 MB/s, avg write rate: 8.525 MB/s
+	buffer usage: 1067790 hits, 1073315 misses, 1068183 dirtied
+	WAL usage: 1067971 records, 258 full page images, 63533549 bytes
+	system usage: CPU: user: 25.30 s, system: 11.61 s, elapsed: 244.72 s
+2022-04-27 08:54:05.404 CEST [25579] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 37.693 MB/s, avg write rate: 4.163 MB/s
+	buffer usage: 10786 hits, 290393 misses, 32072 dirtied
+	system usage: CPU: user: 3.73 s, system: 1.17 s, elapsed: 15.04 s
+2022-04-27 08:55:36.601 CEST [19716] LOG:  automatic vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 7198188 remain, 2 skipped due to pins, 0 skipped frozen
+	tuples: 732964 removed, 105211795 remain, 6364049 are dead but not yet removable, oldest xmin: 549615396
+	index scan needed: 2696037 pages from table (37.45% of total) had 3184262 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 1140122 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 10.563 MB/s, avg write rate: 10.745 MB/s
+	buffer usage: 12151234 hits, 6092213 misses, 6197427 dirtied
+	WAL usage: 11118472 records, 1756271 full page images, 4173144045 bytes
+	system usage: CPU: user: 177.26 s, system: 134.61 s, elapsed: 1126.47 s
+2022-04-27 08:56:00.738 CEST [19716] LOG:  automatic analyze of table "test.public.pgbench_accounts"
+	avg read rate: 15.691 MB/s, avg write rate: 15.046 MB/s
+	buffer usage: 107453 hits, 193895 misses, 185923 dirtied
+	system usage: CPU: user: 4.13 s, system: 2.62 s, elapsed: 24.13 s
+2022-04-27 08:58:11.082 CEST [27015] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 27.649 MB/s, avg write rate: 5.502 MB/s
+	buffer usage: 8748 hits, 292441 misses, 58189 dirtied
+	system usage: CPU: user: 4.43 s, system: 1.62 s, elapsed: 20.65 s
+2022-04-27 09:00:48.987 CEST [20073] LOG:  checkpoint complete: wrote 1106347 buffers (26.4%); 0 WAL file(s) added, 0 removed, 32713 recycled; write=809.225 s, sync=0.682 s, total=818.221 s; sync files=287, longest=0.093 s, average=0.003 s; distance=33498774 kB, estimate=34426535 kB
+2022-04-27 09:02:10.289 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 09:15:49.722 CEST [20073] LOG:  checkpoint complete: wrote 990899 buffers (23.6%); 0 WAL file(s) added, 238 removed, 33112 recycled; write=809.792 s, sync=0.470 s, total=819.433 s; sync files=299, longest=0.079 s, average=0.002 s; distance=34149614 kB, estimate=34398843 kB
+2022-04-27 09:17:11.023 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 09:21:00.459 CEST [28102] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 5144235 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 195479521 remain, 0 are dead but not yet removable, oldest xmin: 654728448
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.322 MB/s, avg write rate: 8.305 MB/s
+	buffer usage: 5140597 hits, 5155432 misses, 5144857 dirtied
+	WAL usage: 8972575 records, 3829049 full page images, 8179829345 bytes
+	system usage: CPU: user: 134.55 s, system: 63.76 s, elapsed: 1210.00 s
+2022-04-27 09:21:26.183 CEST [21960] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 22.401 MB/s, avg write rate: 6.515 MB/s
+	buffer usage: 6385 hits, 294974 misses, 85785 dirtied
+	system usage: CPU: user: 4.69 s, system: 2.21 s, elapsed: 25.71 s
+2022-04-27 09:26:27.410 CEST [26654] LOG:  automatic aggressive vacuum of table "test.public.pgbench_accounts": index scans: 1
+	pages: 0 removed, 7491480 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 640173 removed, 104849873 remain, 6634578 are dead but not yet removable, oldest xmin: 636296679
+	index scan needed: 5215893 pages from table (69.62% of total) had 5796450 dead item identifiers removed
+	index "pgbench_accounts_pkey": pages: 1140122 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 8.782 MB/s, avg write rate: 9.246 MB/s
+	buffer usage: 13360128 hits, 7990092 misses, 8412701 dirtied
+	WAL usage: 14264466 records, 2170119 full page images, 5121405913 bytes
+	system usage: CPU: user: 255.80 s, system: 223.50 s, elapsed: 1777.01 s
+2022-04-27 09:28:58.217 CEST [26548] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 18.413 MB/s, avg write rate: 6.634 MB/s
+	buffer usage: 4391 hits, 296982 misses, 106993 dirtied
+	system usage: CPU: user: 5.53 s, system: 3.04 s, elapsed: 31.50 s
+2022-04-27 09:30:51.891 CEST [20073] LOG:  checkpoint complete: wrote 850769 buffers (20.3%); 0 WAL file(s) added, 0 removed, 39081 recycled; write=810.013 s, sync=0.562 s, total=820.868 s; sync files=287, longest=0.074 s, average=0.002 s; distance=40019041 kB, estimate=40019041 kB
+2022-04-27 09:32:11.694 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 09:45:49.690 CEST [20073] LOG:  checkpoint complete: wrote 803192 buffers (19.1%); 0 WAL file(s) added, 0 removed, 32077 recycled; write=809.313 s, sync=0.297 s, total=817.996 s; sync files=299, longest=0.065 s, average=0.001 s; distance=32847065 kB, estimate=39301843 kB
+2022-04-27 09:47:11.940 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 09:50:15.120 CEST [4956] FATAL:  terminating autovacuum process due to administrator command
+2022-04-27 09:50:15.120 CEST [28807] FATAL:  terminating autovacuum process due to administrator command
+2022-04-27 09:50:15.120 CEST [28807] CONTEXT:  while scanning block 7487877 of relation "public.pgbench_history"
+2022-04-27 09:50:15.120 CEST [26192] FATAL:  terminating autovacuum process due to administrator command
+2022-04-27 09:50:15.120 CEST [26192] CONTEXT:  while vacuuming index "pgbench_accounts_pkey" of relation "public.pgbench_accounts"
+2022-04-27 09:50:19.660 CEST [20073] LOG:  checkpoint complete: wrote 359097 buffers (8.6%); 0 WAL file(s) added, 0 removed, 37003 recycled; write=185.027 s, sync=0.001 s, total=187.720 s; sync files=60, longest=0.001 s, average=0.001 s; distance=37891516 kB, estimate=39160811 kB
+2022-04-27 09:50:19.660 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 09:50:20.752 CEST [20073] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 14090 recycled; write=0.066 s, sync=0.001 s, total=1.093 s; sync files=3, longest=0.001 s, average=0.001 s; distance=14428091 kB, estimate=36687539 kB
+2022-04-27 09:50:25.479 CEST [4958] FATAL:  database "test" does not exist
+2022-04-27 09:50:25.479 CEST [4958] DETAIL:  It seems to have just been dropped or renamed.
+2022-04-27 09:50:25.487 CEST [20073] LOG:  checkpoint starting: immediate force wait flush-all
+2022-04-27 09:50:25.580 CEST [20073] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.068 s, sync=0.001 s, total=0.094 s; sync files=4, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=33018785 kB
+2022-04-27 09:50:25.608 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 09:50:25.697 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.066 s, sync=0.001 s, total=0.089 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=29716907 kB
+2022-04-27 09:59:12.795 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 10:04:39.377 CEST [5113] LOG:  skipping vacuum of "pgbench_accounts" --- lock not available
+2022-04-27 10:12:47.063 CEST [20073] LOG:  checkpoint complete: wrote 5820 buffers (0.1%); 0 WAL file(s) added, 0 removed, 51740 recycled; write=809.287 s, sync=0.001 s, total=814.268 s; sync files=137, longest=0.001 s, average=0.001 s; distance=52981209 kB, estimate=52981209 kB
+2022-04-27 10:14:12.152 CEST [20073] LOG:  checkpoint starting: time
+2022-04-27 10:14:20.211 CEST [20073] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 45270 recycled; write=0.789 s, sync=0.001 s, total=8.060 s; sync files=50, longest=0.001 s, average=0.001 s; distance=46356951 kB, estimate=52318783 kB
+2022-04-27 11:00:51.269 CEST [20073] LOG:  checkpoint starting: immediate force wait
+2022-04-27 11:00:51.385 CEST [20073] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.069 s, sync=0.001 s, total=0.116 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=47086905 kB
+2022-04-27 11:01:41.948 CEST [22030] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 69736 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 2649965 remain, 0 are dead but not yet removable, oldest xmin: 870968176
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.010 MB/s, avg write rate: 0.011 MB/s
+	buffer usage: 139588 hits, 9 misses, 10 dirtied
+	WAL usage: 69530 records, 10 full page images, 4122161 bytes
+	system usage: CPU: user: 0.96 s, system: 0.13 s, elapsed: 1.78 s
+2022-04-27 11:01:43.762 CEST [22030] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 0.041 MB/s, avg write rate: 0.028 MB/s
+	buffer usage: 72835 hits, 38 misses, 26 dirtied
+	system usage: CPU: user: 1.47 s, system: 0.03 s, elapsed: 1.81 s
+2022-04-27 11:02:42.405 CEST [22387] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 153986 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 5851080 remain, 0 are dead but not yet removable, oldest xmin: 874175430
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.049 MB/s, avg write rate: 0.011 MB/s
+	buffer usage: 169102 hits, 56 misses, 13 dirtied
+	WAL usage: 84411 records, 11 full page images, 5002961 bytes
+	system usage: CPU: user: 1.21 s, system: 0.16 s, elapsed: 2.21 s
+2022-04-27 11:02:45.533 CEST [22387] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 41.327 MB/s, avg write rate: 0.017 MB/s
+	buffer usage: 91616 hits, 66187 misses, 27 dirtied
+	system usage: CPU: user: 2.05 s, system: 0.15 s, elapsed: 3.12 s
+2022-04-27 11:03:42.658 CEST [22749] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 243068 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 9236574 remain, 0 are dead but not yet removable, oldest xmin: 877553826
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 0.141 MB/s, avg write rate: 0.045 MB/s
+	buffer usage: 178467 hits, 178 misses, 57 dirtied
+	WAL usage: 88904 records, 11 full page images, 5268048 bytes
+	system usage: CPU: user: 1.35 s, system: 0.18 s, elapsed: 2.46 s
+2022-04-27 11:03:47.225 CEST [22749] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 65.883 MB/s, avg write rate: 0.007 MB/s
+	buffer usage: 93386 hits, 153986 misses, 16 dirtied
+	system usage: CPU: user: 2.43 s, system: 0.46 s, elapsed: 4.56 s
+2022-04-27 11:04:43.039 CEST [23105] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 335666 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 12755169 remain, 0 are dead but not yet removable, oldest xmin: 881074774
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 1.692 MB/s, avg write rate: 1.515 MB/s
+	buffer usage: 183720 hits, 2444 misses, 2188 dirtied
+	WAL usage: 92674 records, 11 full page images, 5490478 bytes
+	system usage: CPU: user: 1.41 s, system: 0.23 s, elapsed: 2.82 s
+2022-04-27 11:04:48.567 CEST [23105] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 76.378 MB/s, avg write rate: 0.012 MB/s
+	buffer usage: 84562 hits, 216175 misses, 35 dirtied
+	system usage: CPU: user: 2.87 s, system: 0.48 s, elapsed: 5.52 s
+2022-04-27 11:05:43.255 CEST [23463] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 430179 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 16346690 remain, 0 are dead but not yet removable, oldest xmin: 884670221
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 2.404 MB/s, avg write rate: 2.185 MB/s
+	buffer usage: 186236 hits, 3746 misses, 3406 dirtied
+	WAL usage: 94615 records, 12 full page images, 5607050 bytes
+	system usage: CPU: user: 1.47 s, system: 0.25 s, elapsed: 3.04 s
+2022-04-27 11:05:48.918 CEST [23463] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 80.592 MB/s, avg write rate: 0.012 MB/s
+	buffer usage: 67206 hits, 233548 misses, 35 dirtied
+	system usage: CPU: user: 2.85 s, system: 0.59 s, elapsed: 5.66 s
+2022-04-27 11:06:31.727 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:06:43.174 CEST [23823] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 525262 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 19959505 remain, 0 are dead but not yet removable, oldest xmin: 888277203
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 2.205 MB/s, avg write rate: 1.924 MB/s
+	buffer usage: 187742 hits, 3317 misses, 2895 dirtied
+	WAL usage: 94934 records, 15 full page images, 5631262 bytes
+	system usage: CPU: user: 1.39 s, system: 0.26 s, elapsed: 2.93 s
+2022-04-27 11:06:48.595 CEST [23823] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 88.438 MB/s, avg write rate: 0.013 MB/s
+	buffer usage: 55283 hits, 245463 misses, 35 dirtied
+	system usage: CPU: user: 2.55 s, system: 0.61 s, elapsed: 5.42 s
+2022-04-27 11:07:46.354 CEST [24180] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 82.419 MB/s, avg write rate: 0.020 MB/s
+	buffer usage: 43572 hits, 257201 misses, 62 dirtied
+	system usage: CPU: user: 2.97 s, system: 0.71 s, elapsed: 6.09 s
+2022-04-27 11:08:54.523 CEST [24545] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 703822 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 26745137 remain, 0 are dead but not yet removable, oldest xmin: 895066022
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 14.191 MB/s, avg write rate: 14.097 MB/s
+	buffer usage: 254968 hits, 103603 misses, 102913 dirtied
+	WAL usage: 178643 records, 22 full page images, 10585232 bytes
+	system usage: CPU: user: 2.74 s, system: 0.84 s, elapsed: 14.25 s
+2022-04-27 11:09:00.294 CEST [24545] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 87.886 MB/s, avg write rate: 0.013 MB/s
+	buffer usage: 41059 hits, 259726 misses, 39 dirtied
+	system usage: CPU: user: 2.69 s, system: 0.72 s, elapsed: 5.77 s
+2022-04-27 11:10:57.142 CEST [25261] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 893798 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 33963921 remain, 0 are dead but not yet removable, oldest xmin: 902288676
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 13.798 MB/s, avg write rate: 13.693 MB/s
+	buffer usage: 262467 hits, 119041 misses, 118134 dirtied
+	WAL usage: 190083 records, 24 full page images, 11264298 bytes
+	system usage: CPU: user: 3.50 s, system: 1.09 s, elapsed: 16.85 s
+2022-04-27 11:11:03.549 CEST [25261] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 81.583 MB/s, avg write rate: 0.013 MB/s
+	buffer usage: 33329 hits, 267497 misses, 42 dirtied
+	system usage: CPU: user: 2.98 s, system: 1.02 s, elapsed: 6.40 s
+2022-04-27 11:11:59.000 CEST [20073] LOG:  checkpoint complete: wrote 258767 buffers (6.2%); 0 WAL file(s) added, 86 removed, 51654 recycled; write=307.548 s, sync=0.896 s, total=327.273 s; sync files=276, longest=0.022 s, average=0.004 s; distance=52981076 kB, estimate=52981076 kB
+2022-04-27 11:12:24.670 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:14:40.568 CEST [26337] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1172884 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 44569293 remain, 0 are dead but not yet removable, oldest xmin: 912894170
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.937 MB/s, avg write rate: 8.891 MB/s
+	buffer usage: 284308 hits, 275608 misses, 274201 dirtied
+	WAL usage: 279111 records, 38 full page images, 16544924 bytes
+	system usage: CPU: user: 5.60 s, system: 2.36 s, elapsed: 60.23 s
+2022-04-27 11:14:50.412 CEST [26337] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 55.288 MB/s, avg write rate: 0.387 MB/s
+	buffer usage: 22256 hits, 278601 misses, 1951 dirtied
+	system usage: CPU: user: 3.25 s, system: 1.40 s, elapsed: 9.84 s
+2022-04-27 11:16:57.168 CEST [27423] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 33.166 MB/s, avg write rate: 4.511 MB/s
+	buffer usage: 15693 hits, 285162 misses, 38788 dirtied
+	system usage: CPU: user: 3.83 s, system: 1.86 s, elapsed: 16.79 s
+2022-04-27 11:17:51.275 CEST [20073] LOG:  checkpoint complete: wrote 220190 buffers (5.2%); 0 WAL file(s) added, 86 removed, 51654 recycled; write=306.314 s, sync=0.909 s, total=326.605 s; sync files=213, longest=0.061 s, average=0.005 s; distance=52982358 kB, estimate=52982358 kB
+2022-04-27 11:18:15.155 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:20:23.798 CEST [28142] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 1645993 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 62547143 remain, 0 are dead but not yet removable, oldest xmin: 930870767
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.980 MB/s, avg write rate: 8.939 MB/s
+	buffer usage: 473212 hits, 475375 misses, 473222 dirtied
+	WAL usage: 473079 records, 65 full page images, 28044467 bytes
+	system usage: CPU: user: 9.23 s, system: 4.02 s, elapsed: 103.39 s
+2022-04-27 11:20:35.980 CEST [28142] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 45.911 MB/s, avg write rate: 2.097 MB/s
+	buffer usage: 14618 hits, 286283 misses, 13075 dirtied
+	system usage: CPU: user: 3.48 s, system: 1.67 s, elapsed: 12.17 s
+2022-04-27 11:22:58.122 CEST [29609] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 32.011 MB/s, avg write rate: 4.604 MB/s
+	buffer usage: 11436 hits, 289470 misses, 41636 dirtied
+	system usage: CPU: user: 3.98 s, system: 2.09 s, elapsed: 17.66 s
+2022-04-27 11:24:05.734 CEST [20073] LOG:  checkpoint complete: wrote 194551 buffers (4.6%); 0 WAL file(s) added, 78 removed, 51661 recycled; write=330.374 s, sync=0.847 s, total=350.580 s; sync files=222, longest=0.057 s, average=0.004 s; distance=52980344 kB, estimate=52982157 kB
+2022-04-27 11:24:32.695 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:26:47.708 CEST [30329] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 2223335 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 84485934 remain, 0 are dead but not yet removable, oldest xmin: 952809533
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.912 MB/s, avg write rate: 8.866 MB/s
+	buffer usage: 577471 hits, 580529 misses, 577539 dirtied
+	WAL usage: 577366 records, 82 full page images, 34232301 bytes
+	system usage: CPU: user: 11.66 s, system: 5.17 s, elapsed: 127.23 s
+2022-04-27 11:27:55.054 CEST [31404] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 39.071 MB/s, avg write rate: 3.344 MB/s
+	buffer usage: 10427 hits, 290544 misses, 24866 dirtied
+	system usage: CPU: user: 3.59 s, system: 2.01 s, elapsed: 14.52 s
+2022-04-27 11:30:51.179 CEST [20073] LOG:  checkpoint complete: wrote 165677 buffers (4.0%); 0 WAL file(s) added, 69 removed, 51671 recycled; write=356.835 s, sync=0.896 s, total=378.484 s; sync files=230, longest=0.040 s, average=0.004 s; distance=52981694 kB, estimate=52982111 kB
+2022-04-27 11:30:58.292 CEST [32481] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 32.060 MB/s, avg write rate: 5.361 MB/s
+	buffer usage: 10083 hits, 290887 misses, 48641 dirtied
+	system usage: CPU: user: 3.15 s, system: 1.93 s, elapsed: 17.72 s
+2022-04-27 11:32:21.640 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:36:29.716 CEST [851] LOG:  automatic vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 2987151 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 113510641 remain, 0 are dead but not yet removable, oldest xmin: 981832762
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.872 MB/s, avg write rate: 8.825 MB/s
+	buffer usage: 763855 hits, 768151 misses, 764051 dirtied
+	WAL usage: 763815 records, 116 full page images, 45302374 bytes
+	system usage: CPU: user: 15.86 s, system: 7.01 s, elapsed: 169.10 s
+2022-04-27 11:36:53.873 CEST [1966] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 43.228 MB/s, avg write rate: 2.753 MB/s
+	buffer usage: 8414 hits, 292659 misses, 18641 dirtied
+	system usage: CPU: user: 3.50 s, system: 1.72 s, elapsed: 13.22 s
+2022-04-27 11:39:06.188 CEST [20073] LOG:  checkpoint complete: wrote 148379 buffers (3.5%); 0 WAL file(s) added, 74 removed, 51669 recycled; write=383.081 s, sync=0.948 s, total=404.548 s; sync files=236, longest=0.053 s, average=0.004 s; distance=52984851 kB, estimate=52984851 kB
+2022-04-27 11:39:39.485 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:40:59.500 CEST [3425] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 30.567 MB/s, avg write rate: 4.860 MB/s
+	buffer usage: 6939 hits, 294120 misses, 46767 dirtied
+	system usage: CPU: user: 4.13 s, system: 2.16 s, elapsed: 18.79 s
+2022-04-27 11:46:03.043 CEST [20073] LOG:  checkpoint complete: wrote 136257 buffers (3.2%); 0 WAL file(s) added, 55 removed, 51685 recycled; write=362.607 s, sync=0.534 s, total=383.559 s; sync files=234, longest=0.031 s, average=0.003 s; distance=52982412 kB, estimate=52984607 kB
+2022-04-27 11:46:30.175 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:52:55.728 CEST [20073] LOG:  checkpoint complete: wrote 145665 buffers (3.5%); 0 WAL file(s) added, 72 removed, 51666 recycled; write=364.348 s, sync=0.861 s, total=385.553 s; sync files=228, longest=0.039 s, average=0.004 s; distance=52979503 kB, estimate=52984097 kB
+2022-04-27 11:53:24.866 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 11:59:28.046 CEST [4947] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 4071185 remain, 0 skipped due to pins, 0 skipped frozen
+	tuples: 0 removed, 154703761 remain, 0 are dead but not yet removable, oldest xmin: 1023022783
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 9.136 MB/s, avg write rate: 8.598 MB/s
+	buffer usage: 4068304 hits, 4080062 misses, 3839876 dirtied
+	WAL usage: 6594387 records, 2755700 full page images, 5894983852 bytes
+	system usage: CPU: user: 87.82 s, system: 39.22 s, elapsed: 872.26 s
+2022-04-27 11:59:51.953 CEST [4947] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 24.250 MB/s, avg write rate: 5.934 MB/s
+	buffer usage: 4493 hits, 296796 misses, 72631 dirtied
+	system usage: CPU: user: 4.53 s, system: 2.64 s, elapsed: 23.90 s
+2022-04-27 12:00:16.063 CEST [20073] LOG:  checkpoint complete: wrote 138954 buffers (3.3%); 0 WAL file(s) added, 48 removed, 51697 recycled; write=390.477 s, sync=0.495 s, total=411.198 s; sync files=241, longest=0.052 s, average=0.003 s; distance=52986693 kB, estimate=52986693 kB
+2022-04-27 12:00:49.614 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 12:07:04.929 CEST [21906] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 21.192 MB/s, avg write rate: 6.527 MB/s
+	buffer usage: 3849 hits, 297337 misses, 91584 dirtied
+	system usage: CPU: user: 4.94 s, system: 2.74 s, elapsed: 27.40 s
+2022-04-27 12:08:29.005 CEST [20073] LOG:  checkpoint complete: wrote 136025 buffers (3.2%); 0 WAL file(s) added, 50 removed, 51690 recycled; write=438.805 s, sync=0.593 s, total=459.391 s; sync files=241, longest=0.032 s, average=0.003 s; distance=52981740 kB, estimate=52986197 kB
+2022-04-27 12:09:03.968 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 12:15:47.844 CEST [20073] LOG:  checkpoint complete: wrote 129624 buffers (3.1%); 0 WAL file(s) added, 70 removed, 51669 recycled; write=382.426 s, sync=0.927 s, total=403.877 s; sync files=239, longest=0.041 s, average=0.004 s; distance=52980365 kB, estimate=52985614 kB
+2022-04-27 12:16:20.442 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 12:23:21.940 CEST [20073] LOG:  checkpoint complete: wrote 128327 buffers (3.1%); 0 WAL file(s) added, 75 removed, 51665 recycled; write=400.025 s, sync=0.974 s, total=421.498 s; sync files=237, longest=0.021 s, average=0.005 s; distance=52982068 kB, estimate=52985260 kB
+2022-04-27 12:23:58.136 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 12:28:42.463 CEST [25221] LOG:  automatic aggressive vacuum of table "test.public.pgbench_history": index scans: 0
+	pages: 0 removed, 6705599 remain, 0 skipped due to pins, 2755113 skipped frozen
+	tuples: 0 removed, 254811310 remain, 0 are dead but not yet removable, oldest xmin: 1123134227
+	index scan not needed: 0 pages from table (0.00% of total) had 0 dead item identifiers removed
+	avg read rate: 8.394 MB/s, avg write rate: 8.370 MB/s
+	buffer usage: 3947516 hits, 3962555 misses, 3950988 dirtied
+	WAL usage: 6584973 records, 2635130 full page images, 5653477717 bytes
+	system usage: CPU: user: 106.60 s, system: 45.90 s, elapsed: 921.97 s
+2022-04-27 12:29:02.262 CEST [31856] LOG:  automatic analyze of table "test.public.pgbench_history"
+	avg read rate: 29.345 MB/s, avg write rate: 5.010 MB/s
+	buffer usage: 4331 hits, 297218 misses, 50743 dirtied
+	system usage: CPU: user: 4.14 s, system: 2.45 s, elapsed: 19.78 s
+2022-04-27 12:31:35.503 CEST [20073] LOG:  checkpoint complete: wrote 111618 buffers (2.7%); 0 WAL file(s) added, 23 removed, 51718 recycled; write=437.106 s, sync=0.562 s, total=457.367 s; sync files=254, longest=0.026 s, average=0.003 s; distance=52982988 kB, estimate=52985032 kB
+2022-04-27 12:32:18.301 CEST [20073] LOG:  checkpoint starting: wal
+2022-04-27 12:33:54.895 CEST [20072] LOG:  received fast shutdown request
+2022-04-27 12:33:54.897 CEST [20072] LOG:  aborting any active transactions
+2022-04-27 12:33:54.898 CEST [25975] FATAL:  terminating autovacuum process due to administrator command
+2022-04-27 12:33:54.898 CEST [25975] CONTEXT:  while scanning block 23454745 of relation "public.pgbench_accounts"
+2022-04-27 12:33:54.899 CEST [20072] LOG:  background worker "logical replication launcher" (PID 20079) exited with exit code 1
+2022-04-27 12:33:59.967 CEST [20073] LOG:  checkpoint complete: wrote 262700 buffers (6.3%); 0 WAL file(s) added, 0 removed, 51743 recycled; write=97.694 s, sync=0.022 s, total=101.666 s; sync files=150, longest=0.021 s, average=0.001 s; distance=52984854 kB, estimate=52985015 kB
+2022-04-27 12:33:59.967 CEST [20073] LOG:  shutting down
+2022-04-27 12:33:59.974 CEST [20073] LOG:  checkpoint starting: shutdown immediate
+2022-04-27 12:34:12.281 CEST [20073] LOG:  checkpoint complete: wrote 2120335 buffers (50.6%); 0 WAL file(s) added, 73 removed, 4237 recycled; write=11.845 s, sync=0.001 s, total=12.315 s; sync files=125, longest=0.001 s, average=0.001 s; distance=4413005 kB, estimate=48127814 kB
+2022-04-27 12:34:13.413 CEST [20072] LOG:  database system is shut down
