@@ -18,7 +18,7 @@ mkdir heatmaps
 #
 psql $DBNAME -c "create extension tablefunc"
 
-for m in xeon; do
+for m in i5 xeon; do
 
 	for r in `ls $ROOTDIR/$m/`; do
 

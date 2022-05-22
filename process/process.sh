@@ -98,6 +98,10 @@ psql $DBNAME < stats.sql
 
 cat results.tmp | psql $DBNAME -c "copy results (run, machine, start_time, end_time, data_block, wal_block, wal_segment, scale, mode, tps, time, wal_bytes) from stdin with (format csv, delimiter ';')"
 
+# remove incomplete runs (disk space, ...)"
+psql $DBNAME -c "delete from results where mode = 'ro' and time < 900"
+psql $DBNAME -c "delete from results where mode = 'rw' and time < 1800"
+
 cat stat-bgwriter.tmp | psql $DBNAME -c "copy load_stats_bgwriter from stdin with (format csv, delimiter '|')"
 cat stat-database.tmp | psql $DBNAME -c "copy load_stats_database from stdin with (format csv, delimiter '|')"
 
