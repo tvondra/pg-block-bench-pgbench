@@ -30,6 +30,7 @@ for m in i5 xeon; do
 			mkdir -p $outdir
 
 			cp heatmap.template heatmap.plot
+			cp heatmap-inverse.template heatmap-inverse.plot
 
 			rm -f scales.txt
 
@@ -217,6 +218,57 @@ ORDER BY 1,2',
 ) AS ct(category text, " 1" text, " 2" text, " 4" text, " 8" text, "16" text, "32" text)
 EOF
 
+					if [ "$t" == "rw" ]; then
+
+						echo "ZZ"
+
+						for db in 1 2 4 8 16 32; do
+
+							# for wb in 1 2 4 8 16 32 64; do
+							for wb in 8; do
+
+								psql -t -A -F ' ' $DBNAME > $s-$t-$db-$wb-tps-time.data <<EOF
+WITH data AS (
+  SELECT floor((epoch) / 10) AS ts,
+         max(xact_commit) AS xact_commit
+  FROM stats_database WHERE run_id = (SELECT min(id) FROM results WHERE machine = '$m' AND mode = '$t' AND scale = $s AND run = '$d' AND wal_segment = $wss AND data_block = $db AND wal_block = $wb)
+  GROUP BY 1
+  ORDER BY 1)
+SELECT ts, xact_commit FROM (
+  SELECT
+    10 * (ts - first_value(ts) OVER (ORDER BY ts)) AS ts,
+    (xact_commit - lag(xact_commit) OVER (ORDER BY ts))/10 AS xact_commit
+  FROM data) foo
+WHERE ts > 0
+EOF
+
+								psql -t -A -F ' ' $DBNAME > $s-$t-$db-$wb-wal-time.data <<EOF
+WITH data AS (
+  SELECT floor((epoch) / 10) AS ts,
+         max(lsn) AS lsn
+  FROM stats_bgwriter WHERE run_id = (SELECT min(id) FROM results WHERE machine = '$m' AND mode = '$t' AND scale = $s AND run = '$d' AND wal_segment = $wss AND data_block = $db AND wal_block = $wb)
+  GROUP BY 1
+  ORDER BY 1)
+SELECT ts, lsn FROM (
+  SELECT
+    10 * (ts - first_value(ts) OVER (ORDER BY ts)) AS ts,
+    (lsn - lag(lsn) OVER (ORDER BY ts))/10 AS lsn
+  FROM data) foo
+WHERE ts > 0
+EOF
+
+							done
+
+						done
+
+						sed "s/SCALE/$s/g" chart.template | sed "s/METRIC/tps/g" | sed "s/MACHINE/$m/g" > chart-tps-$s.plot
+						sed "s/SCALE/$s/g" chart.template | sed "s/METRIC/wal/g" | sed "s/MACHINE/$m/g" > chart-wal-$s.plot
+
+						gnuplot chart-tps-$s.plot
+						gnuplot chart-wal-$s.plot
+
+					fi
+
 				done
 
 			done
@@ -226,21 +278,33 @@ EOF
 			# first scale
 			s=`cat scales.sorted | head -n 1`
 			sed "s/SCALE_A/$s/g" heatmap.plot > heatmap.plot.tmp
+			sed "s/SCALE_A/$s/g" heatmap-inverse.plot > heatmap-inverse.plot.tmp
 			mv heatmap.plot.tmp heatmap.plot
+			mv heatmap-inverse.plot.tmp heatmap-inverse.plot
 
 			# second scale
 			s=`cat scales.sorted | head -n 2 | tail -n 1`
 			sed "s/SCALE_B/$s/g" heatmap.plot > heatmap.plot.tmp
+			sed "s/SCALE_B/$s/g" heatmap-inverse.plot > heatmap-inverse.plot.tmp
 			mv heatmap.plot.tmp heatmap.plot
+			mv heatmap-inverse.plot.tmp heatmap-inverse.plot
 
 			# third scale
 			s=`cat scales.sorted | tail -n 1`
 			sed "s/SCALE_C/$s/g" heatmap.plot > heatmap.plot.tmp
+			sed "s/SCALE_C/$s/g" heatmap-inverse.plot > heatmap-inverse.plot.tmp
 			mv heatmap.plot.tmp heatmap.plot
+			mv heatmap-inverse.plot.tmp heatmap-inverse.plot
 
-			for ds in "tps" "tps-pct" "wal" "wal-corrected" "wal-per-tps" "cache-hit-ratio" "checkpoints" "checkpoints-corrected" "device-tps" "device-tps-corrected" "device-kbps" "device-kbps-corrected" "io-tps" "io-tps-corrected"; do
+			for ds in "tps" "tps-pct" "cache-hit-ratio" "checkpoints" "checkpoints-corrected" "device-tps" "device-tps-corrected" "device-kbps" "device-kbps-corrected" "io-tps" "io-tps-corrected"; do
 				echo "===== $ds ====="
-				sed "s/DATASET/$ds/g" heatmap.plot > heatmap-$ds.plot
+				sed "s/DATASET/$ds/g" heatmap.plot | sed "s/MACHINE/$m/g" > heatmap-$ds.plot
+				gnuplot heatmap-$ds.plot
+			done
+
+			for ds in "wal" "wal-corrected" "wal-per-tps"; do
+				echo "===== $ds ====="
+				sed "s/DATASET/$ds/g" heatmap-inverse.plot | sed "s/MACHINE/$m/g" > heatmap-$ds.plot
 				gnuplot heatmap-$ds.plot
 			done
 

@@ -4,6 +4,8 @@ set output 'heatmap-DATASET.eps'
 set palette defined (0 "red", 0.5 "white", 1 "web-green")
 
 set key off
+set xlabel "data block"
+set ylabel "WAL block"
 
 # set labels for x/y axis to block sizes"
 XTICS="1 2 4 8 16 32"
@@ -18,34 +20,34 @@ unset colorbox
 set multiplot layout 3, 2 rowsfirst
 
 
-set title "scale SCALE_A, read-only"
+set title "machine: MACHINE scale: SCALE_A, mode: read-only"
 
 plot "SCALE_A-ro-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_A-ro-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale SCALE_A, read-write"
+set title "machine: MACHINE scale: SCALE_A, mode: read-write"
 
 plot "SCALE_A-rw-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_A-rw-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
 
-set title "scale SCALE_B, read-only"
+set title "machine: MACHINE scale: SCALE_B, mode: read-only"
 
 plot "SCALE_B-ro-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_B-ro-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale SCALE_B, read-write"
+set title "machine: MACHINE scale: SCALE_B, mode: read-write"
 
 plot "SCALE_B-rw-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_B-rw-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
 
-set title "scale SCALE_C, read-only"
+set title "machine: MACHINE scale: SCALE_C, mode: read-only"
 
 plot "SCALE_C-ro-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_C-ro-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale SCALE_C, read-write"
+set title "machine: MACHINE scale: SCALE_C, mode: read-write"
 
 plot "SCALE_C-rw-DATASET.data" matrix using 1:2:3 with image, \
      "SCALE_C-rw-DATASET.data" matrix using 1:2:(sprintf("%g",$3)) with labels

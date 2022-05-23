@@ -4,6 +4,8 @@ set output 'heatmap-tps.eps'
 set palette defined (0 "red", 0.5 "white", 1 "web-green")
 
 set key off
+set xlabel "data block"
+set ylabel "WAL block"
 
 # set labels for x/y axis to block sizes"
 XTICS="1 2 4 8 16 32"
@@ -18,34 +20,34 @@ unset colorbox
 set multiplot layout 3, 2 rowsfirst
 
 
-set title "scale 50, read-only"
+set title "machine: i5 scale: 50, mode: read-only"
 
 plot "50-ro-tps.data" matrix using 1:2:3 with image, \
      "50-ro-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale 50, read-write"
+set title "machine: i5 scale: 50, mode: read-write"
 
 plot "50-rw-tps.data" matrix using 1:2:3 with image, \
      "50-rw-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
 
-set title "scale 250, read-only"
+set title "machine: i5 scale: 250, mode: read-only"
 
 plot "250-ro-tps.data" matrix using 1:2:3 with image, \
      "250-ro-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale 250, read-write"
+set title "machine: i5 scale: 250, mode: read-write"
 
 plot "250-rw-tps.data" matrix using 1:2:3 with image, \
      "250-rw-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
 
-set title "scale 1000, read-only"
+set title "machine: i5 scale: 1000, mode: read-only"
 
 plot "1000-ro-tps.data" matrix using 1:2:3 with image, \
      "1000-ro-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels
 
-set title "scale 1000, read-write"
+set title "machine: i5 scale: 1000, mode: read-write"
 
 plot "1000-rw-tps.data" matrix using 1:2:3 with image, \
      "1000-rw-tps.data" matrix using 1:2:(sprintf("%g",$3)) with labels

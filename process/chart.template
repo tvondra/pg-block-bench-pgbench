@@ -1,0 +1,13 @@
+set terminal postscript eps size 6,3 enhanced color font 'Helvetica,12'
+set output 'chart-METRIC-time-SCALE.eps'
+
+set key on
+
+set title "scale SCALE, read-write"
+
+plot "SCALE-rw-1-8-METRIC-time.data" using 1:2 with lines title "1kB", \
+     "SCALE-rw-2-8-METRIC-time.data" using 1:2 with lines title "2kB", \
+     "SCALE-rw-4-8-METRIC-time.data" using 1:2 with lines title "4kB", \
+     "SCALE-rw-8-8-METRIC-time.data" using 1:2 with lines title "8kB", \
+     "SCALE-rw-16-8-METRIC-time.data" using 1:2 with lines title "16kB", \
+     "SCALE-rw-32-8-METRIC-time.data" using 1:2 with lines title "32kB"
