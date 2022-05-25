@@ -308,7 +308,11 @@ EOF
 				gnuplot heatmap-$ds.plot
 			done
 
-			mv *.data *.plot *.eps $outdir/
+			for f in *.eps; do
+				convert -background white -alpha remove -alpha off -density 200 $f ${f/eps/png}
+			done
+
+			mv *.data *.plot *.eps *.png $outdir/
 
 		done
 
